@@ -1,0 +1,820 @@
+/* Immunology Page Styles */
+:root {
+    --primary-color: #3a86ff;
+    --secondary-color: #4361ee;
+    --accent-color: #f5c542;
+    --dark-color: #2b2d42;
+    --light-color: #f8f9fa;
+    --gray-color: #6c757d;
+    --success-color: #06d6a0;
+    --white: #ffffff;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    
+    /* Immunology specific colors */
+    --immunology-primary: #3a86ff;
+    --immunology-secondary: #4cc9f0;
+    --immunology-accent: #f72585;
+    --immunology-light: #f1faee;
+}
+
+/* Hero Section */
+#immunology-hero {
+    height: 100vh;
+    background-image: url("landing-background.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* About Section */
+.immunology-about {
+    background-color: var(--light-color);
+}
+
+.immunology-about .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.immunology-about .about-image {
+    position: relative;
+}
+
+.immunology-about .image-container {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.immunology-about .image-container img {
+    transition: transform 0.5s ease;
+}
+
+.immunology-about .image-container:hover img {
+    transform: scale(1.05);
+}
+
+.immunology-about .lead-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.values-list {
+    margin-top: 30px;
+}
+
+.values-list li {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.value-icon {
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(58, 134, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.value-icon i {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.value-content h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.value-content p {
+    color: var(--gray-color);
+}
+
+/* Services Section */
+.immunology-services {
+    background-color: #f5f8ff;
+}
+
+.services-tabs {
+    margin-top: 40px;
+}
+
+.tab-controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.tab-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 25px;
+    border: none;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: var(--transition);
+    min-width: 200px;
+}
+
+.tab-btn i {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.tab-btn span {
+    font-weight: 500;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background-color: var(--primary-color);
+}
+
+.tab-btn.active i, .tab-btn:hover i,
+.tab-btn.active span, .tab-btn:hover span {
+    color: var(--white);
+}
+
+.tab-content {
+    position: relative;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.tab-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.tab-image {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tab-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.tab-image:hover img {
+    transform: scale(1.05);
+}
+
+.tab-details h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.service-list {
+    margin-top: 20px;
+}
+
+.service-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.service-list i {
+    color: var(--success-color);
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+/* Clients Section */
+.immunology-clients {
+    background-color: var(--white);
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.client-card {
+    background-color: var(--light-color);
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.client-card:hover {
+    transform: translateY(-10px);
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.client-icon {
+    margin: 0 auto 20px;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(58, 134, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.client-card:hover .client-icon {
+    background-color: var(--white);
+}
+
+.client-icon i {
+    font-size: 30px;
+    color: var(--primary-color);
+}
+
+.client-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.client-card p {
+    color: var(--gray-color);
+    transition: var(--transition);
+}
+
+.client-card:hover p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Why Choose Us Section */
+.immunology-why-us {
+    background-color: #f5f8ff;
+}
+
+.why-us-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.reason-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.reason-card:hover {
+    transform: translateY(-10px);
+}
+
+.reason-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.reason-card:hover::before {
+    height: 100%;
+    opacity: 0.1;
+}
+
+.reason-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(58, 134, 255, 0.15);
+    margin-bottom: 10px;
+}
+
+.reason-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.reason-card p {
+    color: var(--gray-color);
+}
+
+/* Resources Section */
+.immunology-resources {
+    background-color: var(--white);
+}
+
+.resources-content {
+    margin-top: 40px;
+}
+
+.resources-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.resource-tab {
+    padding: 12px 25px;
+    background-color: var(--light-color);
+    border: none;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.resource-tab.active, .resource-tab:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.resource-content {
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.resource-content.active {
+    display: block;
+}
+
+/* Articles */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.article-card {
+    background-color: var(--light-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+}
+
+.article-image {
+    overflow: hidden;
+}
+
+.article-image img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.article-card:hover .article-image img {
+    transform: scale(1.1);
+}
+
+.article-details {
+    padding: 20px;
+}
+
+.article-details h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.article-details p {
+    color: var(--gray-color);
+    margin-bottom: 15px;
+}
+
+.read-more {
+    color: var(--primary-color);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.read-more i {
+    margin-left: 5px;
+    transition: var(--transition);
+}
+
+.read-more:hover {
+    color: var(--secondary-color);
+}
+
+.read-more:hover i {
+    transform: translateX(5px);
+}
+
+/* Webinars */
+.webinars-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.webinar-card {
+    display: flex;
+    background-color: var(--light-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.webinar-card:hover {
+    transform: translateY(-5px);
+}
+
+.webinar-date {
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 15px;
+}
+
+.webinar-date .month {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.webinar-date .day {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.webinar-details {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.webinar-details h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.webinar-time {
+    color: var(--gray-color);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.webinar-time i {
+    margin-right: 5px;
+}
+
+.webinar-desc {
+    margin-bottom: 15px;
+}
+
+.btn-sm {
+    padding: 8px 20px;
+    font-size: 14px;
+}
+
+/* Educational Materials */
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.material-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.material-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.material-icon {
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(58, 134, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.material-card:hover .material-icon {
+    background-color: var(--white);
+}
+
+.material-icon i {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.material-details {
+    flex-grow: 1;
+}
+
+.material-details h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.material-details p {
+    color: var(--gray-color);
+    margin-bottom: 10px;
+    transition: var(--transition);
+}
+
+.material-card:hover p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.download-link {
+    color: var(--primary-color);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.download-link i {
+    margin-left: 5px;
+    transition: var(--transition);
+}
+
+.material-card:hover .download-link {
+    color: var(--white);
+}
+
+.download-link:hover i {
+    transform: translateX(5px);
+}
+
+/* Contact Section */
+.immunology-contact {
+    background-color: #f5f8ff;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.contact-card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    margin-bottom: 15px;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(58, 134, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon i {
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.contact-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: var(--gray-color);
+    line-height: 1.8;
+}
+
+.contact-form-container {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.1);
+}
+
+.form-check {
+    display: flex;
+    align-items: flex-start;
+}
+
+.form-check input {
+    width: auto;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+    .tab-inner,
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .tab-image {
+        order: -1;
+    }
+    
+    .contact-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .values-list li {
+        flex-direction: column;
+    }
+    
+    .value-icon {
+        margin-bottom: 15px;
+    }
+    
+    .tab-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .resources-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .resource-tab {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+    
+    .webinar-card {
+        flex-direction: column;
+    }
+    
+    .webinar-date {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+        order: -1;
+    }
+    
+    .clients-grid,
+    .why-us-cards,
+    .materials-grid,
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .material-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .material-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}

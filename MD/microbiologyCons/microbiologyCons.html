@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Precision Clinical Microbiology Consultation - ArcaneDX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="microbiologyCons.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../landingPage/landingpage.html">
+                        <span class="logo-text">ArcaneDX</span>
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <div class="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    
+                    <ul class="nav-list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="micro-hero" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Precision Clinical Microbiology Consultation</h1>
+                <p>Expert Guidance for Diagnostic Accuracy and Infection Control</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Our Services</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section id="intro" class="intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2>Your Partners in Microbial Health Management</h2>
+                    <p>At Precision Clinical Microbiology Consulting, we provide specialized clinical microbiology consultation services to healthcare institutions, laboratories, and private practitioners. Our expertise helps optimize diagnostic procedures, enhance infection management strategies, and improve patient outcomes.</p>
+                    <p>Trust us to bring clarity, precision, and actionable insights to complex microbiological challenges.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="intro-pic.jpg" alt="Microbiology Lab" class="img-responsive">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>Your Partners in Microbial Health Management</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-image-container">
+                        <img src="aboutus-pic.jpg" alt="Our Team" class="img-responsive">
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <p>With over 20 years of experience in clinical microbiology, our team of specialists is dedicated to advancing diagnostic microbiology and infectious disease management. We offer unparalleled expertise in microbiological interpretation, infection prevention, and antimicrobial stewardship.</p>
+                    
+                    <h3>Our Core Values</h3>
+                    <div class="values-container">
+                        <div class="value-card">
+                            <i class="fas fa-microscope"></i>
+                            <h4>Precision</h4>
+                            <p>Accurate analysis of diagnostic data for effective clinical decisions.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <i class="fas fa-users"></i>
+                            <h4>Collaboration</h4>
+                            <p>Partnering with healthcare teams to deliver the highest standards of care.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Innovation</h4>
+                            <p>Leveraging the latest scientific advancements and diagnostic tools.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <i class="fas fa-clipboard-check"></i>
+                            <h4>Quality Assurance</h4>
+                            <p>Adhering to international standards for excellence and reliability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Expert Microbiology Consultation and Diagnostics Support</p>
+            </div>
+            
+            <div class="services-tabs">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="tab1">Diagnostic Interpretation</button>
+                    <button class="tab-btn" data-tab="tab2">Infection Control</button>
+                    <button class="tab-btn" data-tab="tab3">Antimicrobial Stewardship</button>
+                    <button class="tab-btn" data-tab="tab4">Laboratory Consultation</button>
+                </div>
+                
+                <div class="tabs-content">
+                    <div class="tab-pane active" id="tab1">
+                        <div class="tab-content-inner">
+                            <div class="tab-image">
+                                <img src="intro-pic.jpg" alt="Diagnostic Analysis" class="img-responsive">
+                            </div>
+                            <div class="tab-details">
+                                <h3>Diagnostic Interpretation and Case Review</h3>
+                                <ul>
+                                    <li><strong>Comprehensive Case Reviews:</strong> Detailed analysis of complex microbiology cases to aid diagnosis and treatment planning.</li>
+                                    <li><strong>Customized Microbial Identification Reports:</strong> Expert evaluation of culture, susceptibility, and molecular diagnostic results.</li>
+                                    <li><strong>Antimicrobial Susceptibility Guidance:</strong> Evidence-based recommendations for targeted antimicrobial therapy.</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary">Request This Service</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="tab2">
+                        <div class="tab-content-inner">
+                            <div class="tab-image">
+                                <img src="intro-pic.jpg" alt="Infection Control" class="img-responsive">
+                            </div>
+                            <div class="tab-details">
+                                <h3>Infection Control and Prevention Programs</h3>
+                                <ul>
+                                    <li><strong>Healthcare-Associated Infection (HAI) Surveillance:</strong> Assistance in tracking, reporting, and reducing HAIs.</li>
+                                    <li><strong>Outbreak Investigations:</strong> Rapid response and data-driven strategies to manage infectious disease outbreaks.</li>
+                                    <li><strong>Infection Prevention Policy Development:</strong> Guidance on protocols for hand hygiene, sterilization, and isolation practices.</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary">Request This Service</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="tab3">
+                        <div class="tab-content-inner">
+                            <div class="tab-image">
+                                <img src="intro-pic.jpg" alt="Antimicrobial Stewardship" class="img-responsive">
+                            </div>
+                            <div class="tab-details">
+                                <h3>Antimicrobial Stewardship</h3>
+                                <ul>
+                                    <li><strong>Program Development and Support:</strong> Establishing antimicrobial stewardship frameworks tailored to your facility's needs.</li>
+                                    <li><strong>Clinical Pathway Optimization:</strong> Recommendations to streamline antibiotic prescribing practices and combat antimicrobial resistance.</li>
+                                    <li><strong>Educational Training:</strong> Customized training sessions for clinicians and staff on antimicrobial best practices.</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary">Request This Service</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="tab4">
+                        <div class="tab-content-inner">
+                            <div class="tab-image">
+                                <img src="intro-pic.jpg" alt="Laboratory Consultation" class="img-responsive">
+                            </div>
+                            <div class="tab-details">
+                                <h3>Laboratory Consultation and Quality Improvement</h3>
+                                <ul>
+                                    <li><strong>Operational Assessment:</strong> Optimizing laboratory workflows for improved efficiency and accuracy.</li>
+                                    <li><strong>Standard Operating Procedure (SOP) Development:</strong> Creation and review of SOPs for microbiological testing.</li>
+                                    <li><strong>Accreditation and Compliance Support:</strong> Guidance to meet CAP, CLIA, and ISO accreditation requirements.</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary">Request This Service</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Serve Section -->
+    <section id="clients" class="clients">
+        <div class="container">
+            <div class="section-header">
+                <h2>Who We Serve</h2>
+                <p>We collaborate with a diverse range of clients</p>
+            </div>
+            
+            <div class="client-grid">
+                <div class="client-card">
+                    <div class="client-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>Hospitals and Healthcare Systems</h3>
+                </div>
+                
+                <div class="client-card">
+                    <div class="client-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Independent and Clinical Laboratories</h3>
+                </div>
+                
+                <div class="client-card">
+                    <div class="client-icon">
+                        <i class="fas fa-clinic-medical"></i>
+                    </div>
+                    <h3>Specialty Clinics and Practices</h3>
+                </div>
+                
+                <div class="client-card">
+                    <div class="client-icon">
+                        <i class="fas fa-briefcase-medical"></i>
+                    </div>
+                    <h3>Public Health Agencies</h3>
+                </div>
+                
+                <div class="client-card">
+                    <div class="client-icon">
+                        <i class="fas fa-capsules"></i>
+                    </div>
+                    <h3>Pharmaceutical and Research Institutions</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Us</h2>
+                <p>Delivering excellence in microbiology consultation</p>
+            </div>
+            
+            <div class="why-us-content">
+                <div class="counter-section">
+                    <div class="counter-box">
+                        <div class="counter" data-count="20">0</div>
+                        <h4>Years of Experience</h4>
+                    </div>
+                    
+                    <div class="counter-box">
+                        <div class="counter" data-count="500">0</div>
+                        <h4>Successful Projects</h4>
+                    </div>
+                    
+                    <div class="counter-box">
+                        <div class="counter" data-count="150">0</div>
+                        <h4>Satisfied Clients</h4>
+                    </div>
+                    
+                    <div class="counter-box">
+                        <div class="counter" data-count="24">0</div>
+                        <h4>Hour Response Time</h4>
+                    </div>
+                </div>
+                
+                <div class="reasons-section">
+                    <div class="reason-box">
+                        <div class="reason-number">1</div>
+                        <div class="reason-content">
+                            <h3>Proven Expertise</h3>
+                            <p>Led by highly experienced clinical microbiologists with a strong track record in diagnostics and infection management.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="reason-box">
+                        <div class="reason-number">2</div>
+                        <div class="reason-content">
+                            <h3>Tailored Solutions</h3>
+                            <p>Customized consultation services that align with your organization's unique goals and challenges.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="reason-box">
+                        <div class="reason-number">3</div>
+                        <div class="reason-content">
+                            <h3>Rapid Turnaround</h3>
+                            <p>Timely consultations to support urgent clinical and operational needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="reason-box">
+                        <div class="reason-number">4</div>
+                        <div class="reason-content">
+                            <h3>Commitment to Continuous Learning</h3>
+                            <p>Up-to-date with the latest advances in microbiology and infectious diseases.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about our services</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-container">
+                    <div class="testimonial-item active">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"Their expertise in microbial identification saved our laboratory countless hours and improved our diagnostic accuracy substantially."</p>
+                            <div class="client-info">
+                                <h4>Dr. Sarah Johnson</h4>
+                                <p>Laboratory Director, Regional Medical Center</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"The antimicrobial stewardship program they helped us implement has reduced our resistance rates by 35% in just one year."</p>
+                            <div class="client-info">
+                                <h4>Dr. Michael Chen</h4>
+                                <p>Chief of Infectious Diseases, Metropolitan Hospital</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"Their outbreak investigation services helped us quickly contain what could have been a major infection control crisis. Highly recommended."</p>
+                            <div class="client-info">
+                                <h4>Lisa Montgomery, RN</h4>
+                                <p>Infection Control Coordinator, Community Health System</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-controls">
+                    <button class="testimonial-arrow prev">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <div class="testimonial-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
+                    <button class="testimonial-arrow next">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <div class="section-header">
+                <h2>Resources and Insights</h2>
+                <p>Stay Informed with Microbiology Expertise</p>
+            </div>
+            
+            <div class="resources-content">
+                <div class="articles-section">
+                    <h3>Latest Articles</h3>
+                    
+                    <div class="article-grid">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="resources-pic.jpg" alt="Article Image">
+                            </div>
+                            <div class="article-content">
+                                <h4>Combatting Antimicrobial Resistance: Strategies for Effective Stewardship</h4>
+                                <p>Learn about the latest approaches to combat growing concerns of antimicrobial resistance in clinical settings.</p>
+                                <a href="#" class="article-link">Read More <i class="fas fa-long-arrow-alt-right"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="resources-pic.jpg" alt="Article Image">
+                            </div>
+                            <div class="article-content">
+                                <h4>Top Five Laboratory Pitfalls in Microbial Identification</h4>
+                                <p>Discover the most common errors in laboratory microbial identification and how to avoid them.</p>
+                                <a href="#" class="article-link">Read More <i class="fas fa-long-arrow-alt-right"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="resources-pic.jpg" alt="Article Image">
+                            </div>
+                            <div class="article-content">
+                                <h4>Optimizing Diagnostic Pathways for Faster Patient Outcomes</h4>
+                                <p>How streamlined microbiology workflows can dramatically improve time to diagnosis and patient care.</p>
+                                <a href="#" class="article-link">Read More <i class="fas fa-long-arrow-alt-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="webinars-section">
+                    <h3>Educational Webinars and Training</h3>
+                    
+                    <div class="webinar-list">
+                        <div class="webinar-item">
+                            <div class="webinar-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="webinar-details">
+                                <h4>Upcoming Webinar: "Innovations in Microbiology: Practical Applications for 2025"</h4>
+                                <p>Date: March 25, 2025 | Time: 2:00 PM EST</p>
+                                <a href="#" class="btn btn-primary">Register Now</a>
+                            </div>
+                        </div>
+                        
+                        <div class="webinar-item">
+                            <div class="webinar-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="webinar-details">
+                                <h4>Recorded Session: "Effective Antimicrobial Stewardship: Reducing Resistance Together"</h4>
+                                <p>Duration: 60 minutes | Presenter: Dr. Rebecca Martinez</p>
+                                <a href="#" class="btn btn-primary">Watch Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter-signup">
+                        <h3>Subscribe to Our Newsletter</h3>
+                        <p>Receive exclusive updates and industry insights straight to your inbox.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Let's Collaborate to Enhance Your Microbiology Services</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Our Location</h3>
+                            <p>123 Medical Center Drive, Suite 500<br>Boston, MA 02115</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p>info@precisionmicro.com<br>support@precisionmicro.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h3>Call Us</h3>
+                            <p>+1 (617) 555-0123<br>+1 (800) 555-0124</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Office Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="consultationForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service">
+                                <option value="" disabled selected>Select Service</option>
+                                <option value="diagnostic">Diagnostic Interpretation</option>
+                                <option value="infection">Infection Control</option>
+                                <option value="antimicrobial">Antimicrobial Stewardship</option>
+                                <option value="laboratory">Laboratory Consultation</option>
+                                <option value="other">Other Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Schedule a Consultation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">Precision Microbiology</span>
+                    <p>Expert Guidance for Diagnostic Accuracy</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#clients">Clients</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <div class="footer-services">
+                            <ul>
+                                <li><a href="../immunology/immunology.html">Clinical Immunology and Flow Cytometry Consulting</a></li>
+                                <li><a href="../microbiologyCons/microbiologyCons.html">Clinical Microbiology Consultation</a></li>
+                                <li><a href="../molecular_pathology/molecular_pathology.html">Molecular Pathology and Microbiology Consulting</a></li>
+                                <li><a href="../landingpage/Landingpage.html">Home page</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Precision Clinical Microbiology Consultation. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="microbiologyCons.js"></script>
+</body>
+</html>
