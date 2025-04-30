@@ -7,6 +7,7 @@
     <title>Precision Clinical Immunology and Flow Cytometry Consulting - ArcaneDX</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../landingPage/landingpage.css">
     <link rel="stylesheet" href="immunology.css">
 </head>
@@ -16,16 +17,22 @@
         <div class="spinner"></div>
     </div>
 
-    <!-- Header & Navigation -->
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="logo">
-                    <a href="../landingPage/landingpage.html">
-                        <span class="logo-text">ArcaneDX</span>
+                <!-- Arcane Dx text on the left -->
+                <div class="logo-text-container">
+                    <span class="logo-text">Arcane Dx</span>
+                </div>
+                
+                <!-- Logo in the middle -->
+                <div class="logo-container">
+                    <a href="../landingPage/Landingpage.html">
+                        <img src="Logo.png" alt="Arcane Dx Logo" class="logo-image">
                     </a>
                 </div>
                 
+                <!-- Navigation on the right -->
                 <nav class="main-nav">
                     <div class="menu-toggle">
                         <span></span>
@@ -34,17 +41,25 @@
                     </div>
                     
                     <ul class="nav-list">
-                        <li><a href="../landingPage/landingpage.html">Home</a></li>
+                        <li><a href="#home" class="active">Home</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Other Services <i class="dropdown-icon">▼</i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../immunology/immunology.html">Clinical Immunology and Flow Cytometry Consulting</a></li>
+                                <li><a href="../microbiologyCons/microbiologyCons.html">Clinical Microbiology Consultation</a></li>
+                                <li><a href="../molecular_pathology/molecular_pathology.html">Molecular Pathology and Microbiology Consulting</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!--------------------------------------------------------------- Intro SECTION  ------------------------------------------->
     <section id="immunology-hero" class="service-hero">
         <div class="hero-overlay"></div>
         <div class="container">
@@ -59,63 +74,98 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section immunology-about">
-        <div class="container">
-            <div class="section-header">
-                <h2>About Our Expertise</h2>
-                <p>Leaders in Immune Diagnostics and Flow Cytometry</p>
+   <!-- _________________________________________________________________About Section _____________________________________________________________________________________-->
+<section id="about" class="section immunology-about">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">About Our Expertise</h2>
+            <div class="section-subtitle">Leaders in Immune Diagnostics and Flow Cytometry</div>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-image">
+                <div class="image-container">
+                    <img src="2nd-pic.jpg" alt="Clinical Immunology Expert Team" id="team-image">
+                    <div class="image-accent"></div>
+                </div>
             </div>
             
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="image-container">
-                        <img src="2nd-pic.jpg" alt="Clinical Immunology Expert Team" id="team-image">
-                    </div>
-                </div>
+            <div class="about-text">
+                <h3 class="about-subtitle">Expert Immunology Consulting</h3>
+                <p class="lead-text">At Arcane Dx Clinical Immunology and Flow Cytometry Consulting, we specialize in
+                    providing expert consulting services to healthcare institutions, diagnostic laboratories, and
+                    contract research organizations (CROs).</p>
                 
-                <div class="about-text">
-                    <p class="lead-text">At Precision Clinical Immunology and Flow Cytometry Consulting, we deliver expert consulting services to healthcare institutions, laboratories, and research facilities.</p>
-                    
-                    <p>Our focus on cutting-edge immunological diagnostics and flow cytometry ensures that you receive accurate, actionable insights tailored to your specific clinical and operational needs.</p>
-                    
-                    <h3>Our Core Values</h3>
-                    <ul class="values-list">
-                        <li>
-                            <span class="value-icon"><i class="fas fa-bullseye"></i></span>
-                            <div class="value-content">
-                                <h4>Precision</h4>
-                                <p>Delivering accurate and insightful analysis of immunological and cytometry data.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="value-icon"><i class="fas fa-users"></i></span>
-                            <div class="value-content">
-                                <h4>Collaboration</h4>
-                                <p>Working closely with healthcare and research teams to achieve diagnostic excellence.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="value-icon"><i class="fas fa-lightbulb"></i></span>
-                            <div class="value-content">
-                                <h4>Innovation</h4>
-                                <p>Staying at the forefront of advancements in immunology and flow cytometry.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="value-icon"><i class="fas fa-certificate"></i></span>
-                            <div class="value-content">
-                                <h4>Quality</h4>
-                                <p>Ensuring compliance with international standards and best practices.</p>
-                            </div>
-                        </li>
-                    </ul>
+                <p class="description-text">Our expertise lies in advancing immunological
+                    diagnostics and flow cytometry testing to deliver accurate, detailed, and actionable insights that
+                    address your unique clinical and operational requirements. With a commitment to Arcane Dx,
+                    reliability, and innovation, we empower our partners to achieve optimal outcomes through
+                    tailored solutions that meet the highest standards of quality and scientific excellence.</p>
+                
+                <div class="highlight-text">
+                    <p>Our team is committed to advancing diagnostics and improving patient outcomes. We specialize
+                        in interpreting complex immunological assays, optimizing flow cytometry workflows, and
+                        providing expert guidance for laboratory and clinical applications.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Services Section -->
+<!-- ------------------------------------------------------------------------Core Values Section --------------------------------------------------------------------------------------------------------------------------------------->
+<section id="core-values" class="section immunology-values">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">Our Core Values</h2>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="value-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="value-content">
+                    <h4>Precision</h4>
+                    <p>Delivering accurate and insightful analysis of immunological and cytometry data.</p>
+                </div>
+            </div>
+            
+            <div class="value-item">
+                <div class="value-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="value-content">
+                    <h4>Collaboration</h4>
+                    <p>Working closely with healthcare and research teams to achieve diagnostic excellence.</p>
+                </div>
+            </div>
+            
+            <div class="value-item">
+                <div class="value-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="value-content">
+                    <h4>Innovation</h4>
+                    <p>Staying at the forefront of advancements in immunology and flow cytometry.</p>
+                </div>
+            </div>
+            
+            <div class="value-item">
+                <div class="value-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="value-content">
+                    <h4>Quality</h4>
+                    <p>Ensuring compliance with international standards and best practices in the field.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!--------------------------------------------------------------------------- Services Section ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <section id="services" class="section immunology-services">
         <div class="container">
             <div class="section-header">
@@ -127,15 +177,15 @@
                 <div class="tab-controls">
                     <button class="tab-btn active" data-tab="tab1">
                         <i class="fas fa-vial"></i>
-                        <span>Diagnostic Immunology</span>
+                        <span>Diagnostic Immunology Consultation</span>
                     </button>
                     <button class="tab-btn" data-tab="tab2">
                         <i class="fas fa-microscope"></i>
-                        <span>Flow Cytometry</span>
+                        <span>Flow Cytometry Services</span>
                     </button>
                     <button class="tab-btn" data-tab="tab3">
                         <i class="fas fa-cogs"></i>
-                        <span>Laboratory Workflow</span>
+                        <span>Laboratory Workflow Optimization</span>
                     </button>
                     <button class="tab-btn" data-tab="tab4">
                         <i class="fas fa-graduation-cap"></i>
@@ -148,16 +198,21 @@
                     <div class="tab-pane active" id="tab1">
                         <div class="tab-inner">
                             <div class="tab-image">
-                                <img src="3rd-pic.jpg" alt="Diagnostic Immunology">
+                                <img src="1cardpic.jpg" alt="Diagnostic Immunology">
                             </div>
                             <div class="tab-details">
                                 <h3>Diagnostic Immunology Consultation</h3>
                                 <p>Our expert team provides comprehensive diagnostic immunology consultation services to help you achieve clinical excellence.</p>
                                 <ul class="service-list">
-                                    <li><i class="fas fa-check-circle"></i> Autoimmune Disease Panels: Interpretation of complex antibody and cytokine profiles</li>
-                                    <li><i class="fas fa-check-circle"></i> Allergy Testing Guidance: Expert evaluation and recommendations for allergen-specific IgE testing</li>
-                                    <li><i class="fas fa-check-circle"></i> Immune Deficiency Diagnostics: Comprehensive analysis of immunoglobulin levels and cellular immune responses</li>
-                                    <li><i class="fas fa-check-circle"></i> Cytokine and Biomarker Profiling: Tailored recommendations for clinical correlation and therapeutic strategies</li>
+                                    <li><i class="fas fa-check-circle"></i> Autoimmune Disease Panels: Comprehensive interpretation of autoimmune disease
+                                        tests, covering screening, prognosis, monitoring, and single biomarker analyses to full
+                                        disease panel evaluations.</li>
+                                    <li><i class="fas fa-check-circle"></i> Allergy Testing Guidance: Expert recommendations for allergen and complnent-
+                                        specific IgE testing and evaluation.</li>
+                                    <li><i class="fas fa-check-circle"></i> Neuroimmunology Testing: Insights and guidance on plasma and CSF biomarker
+                                        assays for Alzheimer’s disease and other neurodegenerative conditions.</li>
+                                    <li><i class="fas fa-check-circle"></i> Immunodeficiency Diagnostics: Detailed analysis of immunoglobulin levels and
+                                        cellular immune responses for primary and secondary immunodeficiency disorders.</li>
                                 </ul>
                             </div>
                         </div>
@@ -167,16 +222,21 @@
                     <div class="tab-pane" id="tab2">
                         <div class="tab-inner">
                             <div class="tab-image">
-                                <img src="3rd-pic.jpg" alt="Flow Cytometry">
+                                <img src="2cardpic.jpg" alt="Flow Cytometry">
                             </div>
                             <div class="tab-details">
                                 <h3>Flow Cytometry Services</h3>
                                 <p>Our specialized flow cytometry consulting helps you maximize the effectiveness of your cellular analysis operations.</p>
                                 <ul class="service-list">
-                                    <li><i class="fas fa-check-circle"></i> Immunophenotyping: Expert guidance on identifying and characterizing immune cell populations</li>
-                                    <li><i class="fas fa-check-circle"></i> Minimal Residual Disease (MRD) Analysis: Advanced support for hematological malignancy monitoring</li>
-                                    <li><i class="fas fa-check-circle"></i> Panel Design and Optimization: Custom-tailored flow cytometry panels for research or clinical applications</li>
-                                    <li><i class="fas fa-check-circle"></i> Data Analysis and Troubleshooting: Detailed analysis and troubleshooting to ensure accurate results</li>
+                                    <li><i class="fas fa-check-circle"></i> Immunophenotyping: Expert support in identifying and characterizing immune cell
+                                        populations./li>
+                                    <li><i class="fas fa-check-circle"></i> Minimal Residual Disease (MRD) Analysis: Advanced assistance in monitoring
+                                        hematological malignancies, including AML, CLL, ALL, and multiple myeloma.</li>
+                                    <li><i class="fas fa-check-circle"></i>Panel Design and Optimization: Customized flow cytometry panel development for
+                                        research and clinical applications, such as CAR-T cell monitoring and biomarker
+                                        development.</li>
+                                    <li><i class="fas fa-check-circle"></i> Data Analysis and Troubleshooting: Comprehensive analysis and troubleshooting to
+                                        ensure precise and reliable results.</li>
                                 </ul>
                             </div>
                         </div>
@@ -186,16 +246,17 @@
                     <div class="tab-pane" id="tab3">
                         <div class="tab-inner">
                             <div class="tab-image">
-                                <img src="3rd-pic.jpg" alt="Laboratory Workflow">
+                                <img src="3cardpic.jpg" alt="Laboratory Workflow">
                             </div>
                             <div class="tab-details">
                                 <h3>Laboratory Workflow Optimization</h3>
                                 <p>Streamline your laboratory operations with our workflow optimization expertise.</p>
                                 <ul class="service-list">
-                                    <li><i class="fas fa-check-circle"></i> Standard Operating Procedures (SOPs): Development and review of SOPs for immunology and cytometry testing</li>
-                                    <li><i class="fas fa-check-circle"></i> Instrument Validation and Maintenance: Ensuring optimal performance of flow cytometry instruments</li>
-                                    <li><i class="fas fa-check-circle"></i> Compliance Support: Guidance for meeting CAP, CLIA, and ISO standards</li>
-                                    <li><i class="fas fa-check-circle"></i> Process Improvement: Identifying bottlenecks and implementing efficient workflows</li>
+                                    <li><i class="fas fa-check-circle"></i> Standard Operating Procedures (SOPs): Development and review of SOPs for
+                                        immunology and cytometry testing.</li>
+                                    <li><i class="fas fa-check-circle"></i> Instrument Validation and Maintenance: Ensuring optimal performance of flow
+                                        cytometry instruments.</li>
+                                    <li><i class="fas fa-check-circle"></i> Compliance Support: Guidance for meeting CAP, CLIA, and ISO standards.</li>
                                 </ul>
                             </div>
                         </div>
@@ -211,10 +272,11 @@
                                 <h3>Education and Training</h3>
                                 <p>Enhance your team's knowledge and skills with our comprehensive education programs.</p>
                                 <ul class="service-list">
-                                    <li><i class="fas fa-check-circle"></i> Workshops and Seminars: In-depth training for laboratory staff on immunology and flow cytometry techniques</li>
-                                    <li><i class="fas fa-check-circle"></i> One-on-One Consultations: Personalized guidance to enhance skillsets and knowledge</li>
-                                    <li><i class="fas fa-check-circle"></i> Educational Materials: Development of custom training guides and resources</li>
-                                    <li><i class="fas fa-check-circle"></i> Certification Preparation: Support for professional certification examinations</li>
+                                    <li><i class="fas fa-check-circle"></i> Workshops and Seminars: In-depth training for laboratory staff on immunology and
+                                        flow cytometry techniques.</li>
+                                    <li><i class="fas fa-check-circle"></i> One-on-One Consultations: Personalized guidance to enhance skillsets and
+                                        knowledge.</li>
+                                    <li><i class="fas fa-check-circle"></i> Educational Materials: Development of custom training guides and resources.</li>
                                 </ul>
                             </div>
                         </div>
@@ -224,7 +286,7 @@
         </div>
     </section>
     
-    <!-- Clients Section -->
+    <!-- --------------------------------------------------------------------WHO WE SERVE --------------------------------------------------------------->
     <section id="clients" class="section immunology-clients">
         <div class="container">
             <div class="section-header">
@@ -238,7 +300,8 @@
                         <i class="fas fa-hospital"></i>
                     </div>
                     <h3>Hospitals and Healthcare Systems</h3>
-                    <p>Supporting immunology diagnostics and cytometry workflows in clinical settings.</p>
+                    <p>Supporting immunology diagnostics and
+                        cytometry workflows.</p>
                 </div>
                 
                 <div class="client-card">
@@ -276,7 +339,7 @@
         </div>
     </section>
     
-    <!-- Why Choose Us Section -->
+    <!-- -----------------------------------------------------------------------------Why Choose Us Section ----------------------------------------------------------------->
     <section id="why-us" class="section immunology-why-us">
         <div class="container">
             <div class="section-header">
@@ -318,7 +381,8 @@
         </div>
     </section>
     
-    <!-- Resources Section -->
+    <!-- --------------------------------------------------------Resources Section -------------------------------------------------------->
+     <!--
     <section id="resources" class="section immunology-resources">
         <div class="container">
             <div class="section-header">
@@ -334,7 +398,7 @@
                 </div>
                 
                 <div class="resources-container">
-                    <!-- Articles -->
+                    
                     <div class="resource-content active" id="articles">
                         <div class="articles-grid">
                             <div class="article-card">
@@ -372,7 +436,7 @@
                         </div>
                     </div>
                     
-                    <!-- Webinars -->
+                    
                     <div class="resource-content" id="webinars">
                         <div class="webinars-list">
                             <div class="webinar-card">
@@ -403,7 +467,7 @@
                         </div>
                     </div>
                     
-                    <!-- Educational Materials -->
+                   
                     <div class="resource-content" id="materials">
                         <div class="materials-grid">
                             <div class="material-card">
@@ -455,96 +519,64 @@
             </div>
         </div>
     </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="section immunology-contact">
+-->
+    <!----------------------------------------------- Contact Section --------------------------------------------------------------------------------------------------------------------------->
+    <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header">
-                <h2>Contact Us</h2>
-                <p>Partner with Experts in Clinical Immunology and Flow Cytometry</p>
+          <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>At Arcane Dx Clinical Chemistry and Toxicology Consulting, we're here to provide
+              actionable insights and solutions for your clinical and laboratory needs. Let's work together to
+              achieve diagnostic excellence.</p>
+          </div>
+          
+          <div class="contact-content">
+            <div class="contact-info">
+              <div class="contact-item">
+                <!--
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h3>Our Location</h3>
+                  <p>123 Medical Center Drive, Suite 500<br>Boston, MA 02115</p>
+                </div>
+                -->
+              </div>
+              
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>info@arcanedx.com<br>support@arcanedx.com</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>+1 (617) 555-0123<br>+1 (800) 555-0124</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <!--
+                <i class="fas fa-clock"></i>
+                <div>
+                  <h3>Office Hours</h3>
+                  <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
+                </div>
+                -->
+              </div>
             </div>
             
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3>Our Location</h3>
-                        <p>123 Medical Center Drive<br>Suite 500<br>Boston, MA 02115</p>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Email Us</h3>
-                        <p>immunology@arcanedx.com<br>cytometry@arcanedx.com</p>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <h3>Call Us</h3>
-                        <p>+1 (617) 555-0125<br>+1 (800) 555-0126</p>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="far fa-clock"></i>
-                        </div>
-                        <h3>Office Hours</h3>
-                        <p>Monday - Friday<br>8:00 AM - 6:00 PM EST</p>
-                    </div>
-                </div>
-                
-                <div class="contact-form-container">
-                    <form id="immunologyContactForm" class="contact-form">
-                        <h3>Schedule a Consultation</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Your Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-                            <div class="form-group">
-                                <label for="organization">Organization</label>
-                                <input type="text" id="organization" name="organization">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service of Interest</label>
-                            <select id="service" name="service" required>
-                                <option value="" disabled selected>Select a Service</option>
-                                <option value="diagnostic-immunology">Diagnostic Immunology Consultation</option>
-                                <option value="flow-cytometry">Flow Cytometry Services</option>
-                                <option value="lab-workflow">Laboratory Workflow Optimization</option>
-                                <option value="education">Education and Training</option>
-                                <option value="other">Other (Please specify)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">How Can We Help?</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" id="subscribe" name="subscribe">
-                            <label for="subscribe">Subscribe to our newsletter for updates on immunology and flow cytometry advancements</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
-                    </form>
-                </div>
+            <div class="google-form">
+              <h3>Schedule a Consultation</h3>
+              <p>Please fill out our consultation request form to get started. Our team of experts will review your information and get back to you promptly.</p>
+              <a href="YOUR_GOOGLE_FORM_URL_HERE" class="btn" target="_blank">
+                <i class="fas fa-calendar-check"></i>Complete Consultation Request
+              </a>
             </div>
+          </div>
         </div>
     </section>
     

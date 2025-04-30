@@ -4,10 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ArcaneDX - Medical Laboratory Consulting Services</title>
+    <title>Arcane Dx - Esoteric Laboratory Consulting Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="landingpage.css">
+    <style>
+        .mission-values {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .mission-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .mission-icon {
+            margin-bottom: 20px;
+            width: 70px;
+            height: 70px;
+            background-color: rgba(58, 134, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+        }
+        
+        .mission-icon i {
+            font-size: 28px;
+            color: var(--primary-color);
+        }
+        
+        .mission-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .mission-card p {
+            color: var(--gray-color);
+        }
+        
+        .lab-services {
+            background-color: #f5f8ff;
+        }
+        
+        .lab-services-content {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .service-section {
+            margin-bottom: 40px;
+        }
+        
+        .service-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .service-section h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .service-section p {
+            margin-bottom: 15px;
+        }
+        
+        .service-list {
+            list-style: none;
+            margin-left: 20px;
+        }
+        
+        .service-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .service-list li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--success-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Preloader -->
@@ -16,15 +126,23 @@
     </div>
 
     <!-- Header & Navigation -->
+    <!-- Header & Navigation -->
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="logo">
+                <!-- Arcane Dx text on the left -->
+                <div class="logo-text-container">
+                    <span class="logo-text">Arcane Dx</span>
+                </div>
+                
+                <!-- Logo in the middle -->
+                <div class="logo-container">
                     <a href="../landingPage/Landingpage.html">
-                        <span class="logo-text">ArcaneDX</span>
+                        <img src="Logo.png" alt="Arcane Dx Logo" class="logo-image">
                     </a>
                 </div>
                 
+                <!-- Navigation on the right -->
                 <nav class="main-nav">
                     <div class="menu-toggle">
                         <span></span>
@@ -36,20 +154,22 @@
                         <li><a href="#home" class="active">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#mission" class="two-words">Our Mission</a></li>
+                        <li><a href="#lab-services" class="two-words">Laboratory Consulting</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!----------------------------------Hero Section ---------------------------------------------->
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>Welcome to ArcaneDX</h1>
-                <p>Expert Laboratory Consulting With Confidence</p>
+                <h1>Welcome to Arcane Dx</h1>
+                <p>Esoteric Laboratory Consulting for Clinical Pathology Specialties</p>
                 <div class="hero-buttons">
                     <a href="#services" class="btn btn-primary">Our Services</a>
                     <a href="#contact" class="btn btn-secondary">Contact Us</a>
@@ -58,12 +178,12 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- ------------------------------------Services Section ------------------------------------------>
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
                 <h2>Our Specialized Services</h2>
-                <p>Comprehensive medical laboratory consulting tailored to your needs</p>
+                <p>Comprehensive esoteric laboratory consulting tailored to your needs</p>
             </div>
             
             <div class="service-grid">
@@ -122,7 +242,7 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2>Why Choose ArcaneDX</h2>
+                <h2>Why Choose Arcane Dx</h2>
                 <p>We deliver expertise that makes a difference</p>
             </div>
             
@@ -149,7 +269,7 @@
                     </div>
                     
                     <div class="feature">
-                        <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-check-circle"></i>
                         <div>
                             <h3>Regulatory Compliance</h3>
                             <p>Stay ahead of changing regulations with our up-to-date compliance guidance and implementation support.</p>
@@ -163,81 +283,227 @@
                             <p>We're committed to your success with ongoing assistance and follow-up consultation.</p>
                         </div>
                     </div>
+                    
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>Understanding Laboratory Dynamics</h3>
+                            <p>We understand the intricate dynamics of laboratory success and failure, guiding you through industry complexities and helping you avoid common pitfalls.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-----------------------------------------------------------------DEFINING OURSELVES------------------------------------------------------------------------------>
+    <section id="mission" class="mission-values">
         <div class="container">
             <div class="section-header">
-                <h2>Contact Us</h2>
-                <p>Ready to transform your laboratory operations?</p>
+                <h2>Defining Ourselves at Arcane Dx</h2>
+                <p>At Arcane Dx, we pride ourselves on pioneering excellence in esoteric laboratory
+                    consulting for clinical pathology specialties. Our identity is rooted in our unwavering
+                    commitment to our clients&#39; success. We leverage our extensive experience and
+                    expertise to foster innovation and efficiency in laboratory operations.</p>
             </div>
             
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Our Location</h3>
-                            <p>123 Medical Center Drive, Suite 500<br>Boston, MA 02115</p>
-                        </div>
+            <div class="mission-content">
+                <!-- Mission -->
+                <div class="mission-box">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
                     </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email Us</h3>
-                            <p>info@arcanedx.com<br>support@arcanedx.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h3>Call Us</h3>
-                            <p>+1 (617) 555-0123<br>+1 (800) 555-0124</p>
-                        </div>
-                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To empower laboratories with cutting-edge diagnostic capabilities and strategic management necessary to achieve exceptional outcomes.</p>
                 </div>
                 
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <!-- Vision -->
+                <div class="mission-box">
+                    <div class="mission-icon">
+                        <i class="fas fa-binoculars"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be the leading provider of esoteric laboratory consulting, known for our client-centric approach and transformative solutions.</p>
+                </div>
+                
+                <!-- Values -->
+                <div class="values-box">
+                    <div class="values-header">
+                        <div class="mission-icon">
+                            <i class="fas fa-heart"></i>
                         </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <select id="service" name="service">
-                                <option value="" disabled selected>Select Service</option>
-                                <option value="clinical-chemistry">Clinical Chemistry & Toxicology</option>
-                                <option value="immunology">Immunology & Flow Cytometry</option>
-                                <option value="microbiology">Clinical Microbiology</option>
-                                <option value="molecular">Molecular Pathology</option>
-                                <option value="other">Other Inquiry</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+                        <h3>Our Values</h3>
+                    </div>
+                    <ul class="values-list">
+                        <li>
+                            <span class="value-title">Innovation:</span> 
+                            <span class="value-desc">Continuously research and bring advancements in laboratory diagnostics.</span>
+                        </li>
+                        <li>
+                            <span class="value-title">Integrity:</span> 
+                            <span class="value-desc">Upholding the highest standards of professionalism and ethics.</span>
+                        </li>
+                        <li>
+                            <span class="value-title">Collaboration:</span> 
+                            <span class="value-desc">Partnering with clients to understand and address their unique challenges.</span>
+                        </li>
+                        <li>
+                            <span class="value-title">Excellence:</span> 
+                            <span class="value-desc">Delivering unparalleled consulting and management services.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Footer -->
+    <!-- Laboratory Services Section -->
+    <section id="lab-services" class="lab-services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Laboratory Consulting Services</h2>
+                <p>Whether establishing a laboratory or augmenting specialized diagnostic capabilities</p>
+            </div>
+            
+            <div class="lab-services-content">
+                <div class="service-section">
+                    <h3>Comprehensive Laboratory Consulting</h3>
+                    <p>Arcane Dx possesses a team of highly skilled medical laboratory consultants in Clinical Pathology areas and other professionals dedicated to assisting you in managing and operating your laboratory efficiently. Whether you are initiating a new medical laboratory or aiming to expand your current test menu, we provide strategic solutions to enhance the success of your laboratory.</p>
+                </div>
+                
+                <div class="service-section">
+                    <h3>How We Can Assist</h3>
+                    <p>The selection of necessary instrumentation and qualified personnel is essential for establishing an effective and operational test menu in your laboratory. Arcane Dx will provide clinically relevant information and reimbursement data so you can make an informed decision about what is most suitable for your needs.</p>
+                    <p>Whether this is your first laboratory experience, or you are expanding your existing test menu, the team of professionals at Arcane Dx has the expertise to custom tailor a test menu that aligns with your specialty or region of the country.</p>
+                </div>
+                
+                <div class="service-section">
+                    <h3>Ongoing CLIA Consulting and Regulatory Support</h3>
+                    <p>We offer on-going consulting and support with a monthly retainer fee. Our team is available five days a week for technical support, troubleshooting, and discussions about test menus and product development. We are committed to your lab's success.</p>
+                </div>
+                
+                <div class="service-section">
+                    <h3>Esoteric Consultation Services</h3>
+                    <p>Our highly qualified and experienced team of High-Complexity, CLIA qualified Laboratory Directors are equipped to validate new tests for your laboratory. With more than 50 years of combined experience, we specialize in validating tests across various fields including:</p>
+                    <ul class="service-list">
+                        <li>Molecular diagnosis for infectious disease</li>
+                        <li>Toxicology</li>
+                        <li>Pharmacogenomics (PGx)</li>
+                        <li>Allergy testing</li>
+                        <li>Flow cytometry panels for oncology/infectious diseases</li>
+                        <li>And more specialized diagnostic capabilities</li>
+                    </ul>
+                </div>
+                
+                <div class="service-section">
+                    <h3>Growth Strategy for Esoteric Test Menu</h3>
+                    <p>Expanding your laboratory's esoteric testing capabilities involves making informed decisions about introducing new and specialized tests. Our team of expert consultants provides comprehensive guidance to help you identify and implement the most advanced testing solutions, tailored to your laboratory's specific needs and specialties.</p>
+                </div>
+
+                <div class="service-section">
+                    <h3>Part-Time Medical Lab Director Services</h3>
+                    <p>Our Part-Time Medical Lab Director Services are ideal for small labs and startups
+                        dealing with monthly reporting and regulatory compliance. Arcane Dx Lab Directors are
+                        HHS approved; board-certified professionals dedicated to your lab&#39;s success.</p>
+                    <p>Our Part-Time Medical Lab Directors will:</p>
+                    <ul class="service-list">
+                        <li>Review and approve your SOPs</li>
+                        <li>Sign off on monthly quality control logs</li>
+                        <li>Perform all necessary duties in accordance with CLIA regulations</li>
+                    </ul>
+                    <p>Directors support your lab with a combination of remote and on-site involvement. Most
+                        monthly tasks are remote, but your Lab Director will visit semi-annually, as mandated by
+                        CLIA, and be available for inspections as needed.</p>
+                </div>
+
+                <div class="service-section">
+                    <h3>Laboratory Audits Pre- and Post- Regulatory Inspections By CLIA, CAP, COLA, etc.</h3>
+                    <p>Our expert team ensures that your laboratory is thoroughly prepared for upcoming
+                        inspections, identifying areas of potential non-compliance and providing actionable
+                        recommendations. We conduct meticulous audits that align with the stringent standards
+                        of established regulatory bodies such as the College of American Pathologists (CAP),
+                        Clinical Laboratory Improvement Amendments (CLIA), and the Commission on Office
+                        Laboratory Accreditation (COLA).</p>
+                    <p>We offer comprehensive pre-inspection audits designed to mirror the criteria and rigor of
+                        actual regulatory assessments. This proactive approach allows laboratories to address
+                        deficiencies and implement improvements well ahead of official evaluations. In the post-
+                        inspection phase, our audits serve to verify the effectiveness of corrective actions and
+                        sustain compliance, ensuring your laboratory continues to operate at the highest
+                        standards of quality and safety.</p>
+                    <p>Partner with us to navigate the complexities of regulatory compliance, and maintain the
+                        integrity and excellence of your laboratory operations.</p>
+                </div>
+              
+            </div>
+        </div>
+    </section>
+    
+    <!-- --------------------------------------------------------------------Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+          <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>At Arcane Dx Clinical Chemistry and Toxicology Consulting, we're here to provide
+              actionable insights and solutions for your clinical and laboratory needs. Let's work together to
+              achieve diagnostic excellence.</p>
+          </div>
+          
+          <div class="contact-content">
+            <div class="contact-info">
+              <div class="contact-item">
+                <!--
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h3>Our Location</h3>
+                  <p>123 Medical Center Drive, Suite 500<br>Boston, MA 02115</p>
+                </div>
+                -->
+              </div>
+              
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>info@arcanedx.com<br>support@arcanedx.com</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>+1 (617) 555-0123<br>+1 (800) 555-0124</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <!--
+                <i class="fas fa-clock"></i>
+                <div>
+                  <h3>Office Hours</h3>
+                  <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
+                </div>
+                -->
+              </div>
+            </div>
+            
+            <div class="google-form">
+              <h3>Schedule a Consultation</h3>
+              <p>Please fill out our consultation request form to get started. Our team of experts will review your information and get back to you promptly.</p>
+              <a href="YOUR_GOOGLE_FORM_URL_HERE" class="btn" target="_blank">
+                <i class="fas fa-calendar-check"></i>Complete Consultation Request
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-------------------------------------- Footer ------------------------------>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <span class="logo-text">ArcaneDX</span>
-                    <p>Where Advice Is Given With Confidence</p>
+                    <span class="logo-text">Arcane Dx</span>
+                    <p></p>
                 </div>
                 
                 <div class="footer-links">
@@ -246,6 +512,8 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#about">About Us</a></li>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#lab-services">Laboratory Consulting</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -255,24 +523,24 @@
                     <ul>
                         <li><a href="../chemtox/Chemtox.html">Clinical Chemistry & Toxicology</a></li>
                         <li><a href="../immunology/immunology.html">Immunology & Flow Cytometry</a></li>
-                        <li><a href="../microbiologyCons/microbiologyCons.html">Clinical Microbiology</a></li>
-                        <li><a href="../molecular_pathology/molecular_pathology.html">Molecular Pathology</a></li>
+                        <li><a href="../microbiologyCons/microbiologyCons.html">Clinical Microbiology Consultation</a></li>
+                        <li><a href="../molecular_pathology/molecular_pathology.html">Molecular Pathology and Microbiology Consulting</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-social">
                     <h3>Connect With Us</h3>
                     <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="../comingsoon/commingsoon.html" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="../comingsoon/commingsoon.html" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="../comingsoon/commingsoon.html" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="../comingsoon/commingsoon.html" class="social-icon"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 ArcaneDX. All Rights Reserved.</p>
+                <p>&copy; 2025 Arcane Dx. All Rights Reserved.</p>
             </div>
         </div>
     </footer>

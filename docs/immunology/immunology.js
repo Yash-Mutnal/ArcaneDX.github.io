@@ -205,9 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (teamImage) {
         // Array of potential placeholder images for swapping
         const teamImages = [
-            '/api/placeholder/600/450',
-            '/api/placeholder/600/450?text=Our+Team',
-            '/api/placeholder/600/450?text=Expertise'
+        '2nd-pic.jpg',  // keep your original image as the first option
         ];
         
         let currentImageIndex = 0;
@@ -252,4 +250,134 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run on load and scroll
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Run once on load
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+        
+        dropdownToggle.addEventListener('click', function(e) {
+            // Only prevent default on mobile
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            }
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        dropdowns.forEach(dropdown => {
+            if (!dropdown.contains(e.target) && dropdown.classList.contains('active')) {
+                dropdown.classList.remove('active');
+            }
+        });
+    });
+});
+
+// Enhanced Section Fade-In Animation
+document.addEventListener('DOMContentLoaded', function() {
+    // Create and append CSS for fade-in animations
+    const styleEl = document.createElement('style');
+    styleEl.textContent = `
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+            will-change: opacity, transform;
+        }
+        
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Staggered animations for items within sections */
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            transition-delay: var(--stagger-delay, 0ms);
+            will-change: opacity, transform;
+        }
+        
+        .is-visible .stagger-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    `;
+    document.head.appendChild(styleEl);
+    
+    // Select all major sections to animate - include all sections on the page
+    const sections = document.querySelectorAll('section');
+    
+    // Add fade-in-section class to all sections
+    sections.forEach(section => {
+        section.classList.add('fade-in-section');
+    });
+    
+    // Add stagger classes to items within sections
+    const staggerElements = {
+        // Hero section elements
+        '.hero-content > *': document.querySelectorAll('.hero-content > *'),
+        // About section
+        '.about-content > *': document.querySelectorAll('.about-content > *'),
+        // Core values section
+        '.value-item': document.querySelectorAll('.value-item'),
+        // Services tabs
+        '.tab-btn': document.querySelectorAll('.tab-btn'),
+        // Clients section
+        '.client-card': document.querySelectorAll('.client-card'),
+        // Why us section
+        '.reason-card': document.querySelectorAll('.reason-card')
+    };
+    
+    // Apply stagger classes and set delay variables
+    Object.entries(staggerElements).forEach(([selector, elements]) => {
+        elements.forEach((el, index) => {
+            el.classList.add('stagger-item');
+            el.style.setProperty('--stagger-delay', `${index * 150}ms`);
+        });
+    });
+    
+    // Check if elements are in viewport and add visible class
+    function checkFadeInElements() {
+        // Set this to control when the animation triggers (0.85 means 85% of viewport height)
+        const triggerBottom = window.innerHeight * 0.85;
+        
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            
+            if (sectionTop < triggerBottom) {
+                section.classList.add('is-visible');
+            }
+        });
+    }
+    
+    // Run check immediately for elements already in view
+    checkFadeInElements();
+    
+    // Listen for scroll events with throttling for better performance
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (!scrollTimeout) {
+            scrollTimeout = setTimeout(function() {
+                checkFadeInElements();
+                scrollTimeout = null;
+            }, 20); // 20ms throttle
+        }
+    });
+    
+    // Also recheck on resize
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        if (!resizeTimeout) {
+            resizeTimeout = setTimeout(function() {
+                checkFadeInElements();
+                resizeTimeout = null;
+            }, 100); // 100ms throttle for resize
+        }
+    });
 });

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Precision Clinical Microbiology Consultation - ArcaneDX</title>
+    <title>Microbiology Consultation Arcane Dx</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="microbiologyCons.css">
@@ -19,12 +19,19 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="logo">
-                    <a href="../landingPage/landingpage.html">
-                        <span class="logo-text">ArcaneDX</span>
+                <!-- Arcane Dx text on the left -->
+                <div class="logo-text-container">
+                    <span class="logo-text">Arcane Dx</span>
+                </div>
+                
+                <!-- Logo in the middle -->
+                <div class="logo-container">
+                    <a href="../landingPage/Landingpage.html">
+                        <img src="Logo.png" alt="Arcane Dx Logo" class="logo-image">
                     </a>
                 </div>
                 
+                <!-- Navigation on the right -->
                 <nav class="main-nav">
                     <div class="menu-toggle">
                         <span></span>
@@ -33,8 +40,16 @@
                     </div>
                     
                     <ul class="nav-list">
-                        <li><a href="#home">Home</a></li>
+                        <li><a href="../landingpage/Landingpage.html">Home</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Other Services <i class="dropdown-icon">▼</i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../chemtox/Chemtox.html">Clinical Chemistry & Toxicology</a></li>
+                                <li><a href="../immunology/immunology.html">Clinical Immunology and Flow Cytometry Consulting</a></li>
+                                <li><a href="../molecular_pathology/molecular_pathology.html">Molecular Pathology and Microbiology Consulting</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -48,7 +63,7 @@
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>Precision Clinical Microbiology Consultation</h1>
+                <h1>Welcome to Arcane Dx Clinical Microbiology Consultation</h1>
                 <p>Expert Guidance for Diagnostic Accuracy and Infection Control</p>
                 <div class="hero-buttons">
                     <a href="#services" class="btn btn-primary">Our Services</a>
@@ -58,14 +73,16 @@
         </div>
     </section>
 
-    <!-- Introduction Section -->
+    <!------------------------------------------------ Introduction Section ---------------------------------------------------------------------------------------->
     <section id="intro" class="intro">
         <div class="container">
             <div class="intro-content">
                 <div class="intro-text">
                     <h2>Your Partners in Microbial Health Management</h2>
-                    <p>At Precision Clinical Microbiology Consulting, we provide specialized clinical microbiology consultation services to healthcare institutions, laboratories, and private practitioners. Our expertise helps optimize diagnostic procedures, enhance infection management strategies, and improve patient outcomes.</p>
-                    <p>Trust us to bring clarity, precision, and actionable insights to complex microbiological challenges.</p>
+                    <p>At Arcane Dx, we provide specialized clinical microbiology consultation services to healthcare
+                        institutions, laboratories, and private practitioners. Our expertise helps optimize diagnostic
+                        procedures, enhance infection management strategies, and improve patient outcomes. Trust us
+                        to bring clarity, precision, and actionable insights to complex microbiological challenges.</p>
                 </div>
                 <div class="intro-image">
                     <img src="intro-pic.jpg" alt="Microbiology Lab" class="img-responsive">
@@ -74,7 +91,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ----------------------------------------------------------About Section ------------------------------------------------------------------------------------->
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
@@ -90,7 +107,10 @@
                 </div>
                 
                 <div class="about-text">
-                    <p>With over 20 years of experience in clinical microbiology, our team of specialists is dedicated to advancing diagnostic microbiology and infectious disease management. We offer unparalleled expertise in microbiological interpretation, infection prevention, and antimicrobial stewardship.</p>
+                    <p>With more than 25 years of combined experience in clinical microbiology, Arcane Dx leads a
+                        team dedicated to advancing diagnostic microbiology and infectious disease management. We
+                        offer unparalleled expertise in microbiological interpretation, infection prevention, and
+                        antimicrobial stewardship.</p>
                     
                     <h3>Our Core Values</h3>
                     <div class="values-container">
@@ -123,7 +143,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!------------------------------------------------------ Our Services Section ----------------------------------------------------------------------------------->
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
@@ -133,17 +153,17 @@
             
             <div class="services-tabs">
                 <div class="tabs-nav">
-                    <button class="tab-btn active" data-tab="tab1">Diagnostic Interpretation</button>
-                    <button class="tab-btn" data-tab="tab2">Infection Control</button>
+                    <button class="tab-btn active" data-tab="tab1"> Diagnostic Interpretation and Case Review </button>
+                    <button class="tab-btn" data-tab="tab2">Infection Control and Prevention Programs</button>
                     <button class="tab-btn" data-tab="tab3">Antimicrobial Stewardship</button>
-                    <button class="tab-btn" data-tab="tab4">Laboratory Consultation</button>
+                    <button class="tab-btn" data-tab="tab4">Laboratory Consultation and Quality Improvement</button>
                 </div>
                 
                 <div class="tabs-content">
                     <div class="tab-pane active" id="tab1">
                         <div class="tab-content-inner">
                             <div class="tab-image">
-                                <img src="intro-pic.jpg" alt="Diagnostic Analysis" class="img-responsive">
+                                <img src="1cardpic.jpg" alt="Diagnostic Analysis" class="img-responsive">
                             </div>
                             <div class="tab-details">
                                 <h3>Diagnostic Interpretation and Case Review</h3>
@@ -160,7 +180,7 @@
                     <div class="tab-pane" id="tab2">
                         <div class="tab-content-inner">
                             <div class="tab-image">
-                                <img src="intro-pic.jpg" alt="Infection Control" class="img-responsive">
+                                <img src="2cardpic.jpg" alt="Infection Control" class="img-responsive">
                             </div>
                             <div class="tab-details">
                                 <h3>Infection Control and Prevention Programs</h3>
@@ -177,7 +197,7 @@
                     <div class="tab-pane" id="tab3">
                         <div class="tab-content-inner">
                             <div class="tab-image">
-                                <img src="intro-pic.jpg" alt="Antimicrobial Stewardship" class="img-responsive">
+                                <img src="3cardpic.jpg" alt="Antimicrobial Stewardship" class="img-responsive">
                             </div>
                             <div class="tab-details">
                                 <h3>Antimicrobial Stewardship</h3>
@@ -194,7 +214,7 @@
                     <div class="tab-pane" id="tab4">
                         <div class="tab-content-inner">
                             <div class="tab-image">
-                                <img src="intro-pic.jpg" alt="Laboratory Consultation" class="img-responsive">
+                                <img src="4cardpic.jpg" alt="Laboratory Consultation" class="img-responsive">
                             </div>
                             <div class="tab-details">
                                 <h3>Laboratory Consultation and Quality Improvement</h3>
@@ -212,7 +232,7 @@
         </div>
     </section>
 
-    <!-- Who We Serve Section -->
+    <!----------------------------------------------------------------------- Who We Serve Section --------------------------------------------------------->
     <section id="clients" class="clients">
         <div class="container">
             <div class="section-header">
@@ -255,37 +275,46 @@
                     </div>
                     <h3>Pharmaceutical and Research Institutions</h3>
                 </div>
+
+                <div class="client-card">
+                    <div class="client-icon">
+                        <i class="fas fa-briefcase-medical"></i>
+                    </div>
+                    <h3>New technology development assistance, including help with FDA device clinical
+                        trials (510k submission).</h3>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
+    <!---------------------------------------------------- Why Choose Us Section ----------------------------------------------------------------------------------------------------->
     <section id="why-us" class="why-us">
         <div class="container">
             <div class="section-header">
                 <h2>Why Choose Us</h2>
                 <p>Delivering excellence in microbiology consultation</p>
             </div>
-            
+            <!--NUMBERS NOT WOPRKING-->
             <div class="why-us-content">
                 <div class="counter-section">
                     <div class="counter-box">
-                        <div class="counter" data-count="20">0</div>
+                        <div class="counter" data-count="20">20</div>
                         <h4>Years of Experience</h4>
                     </div>
                     
+                    
                     <div class="counter-box">
-                        <div class="counter" data-count="500">0</div>
+                        <div class="counter" data-count="500">500</div>
                         <h4>Successful Projects</h4>
                     </div>
-                    
+                    <!--
                     <div class="counter-box">
-                        <div class="counter" data-count="150">0</div>
+                        <div class="counter" data-count="150">150</div>
                         <h4>Satisfied Clients</h4>
                     </div>
-                    
+                    -->
                     <div class="counter-box">
-                        <div class="counter" data-count="24">0</div>
+                        <div class="counter" data-count="24">24</div>
                         <h4>Hour Response Time</h4>
                     </div>
                 </div>
@@ -327,7 +356,8 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- --------------------------------------------------------------Testimonials Section ----------------------------------------------------------->
+     <!--
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
@@ -394,12 +424,13 @@
         </div>
     </section>
 
-    <!-- Resources Section -->
+     Resources Section 
     <section id="resources" class="resources">
         <div class="container">
             <div class="section-header">
                 <h2>Resources and Insights</h2>
-                <p>Stay Informed with Microbiology Expertise</p>
+                <p>Stay informed with our expert insights and resources on microbiology trends, infection control
+                    innovations, and best practices.</p>
             </div>
             
             <div class="resources-content">
@@ -441,7 +472,7 @@
                         </div>
                     </div>
                 </div>
-                
+               <!--
                 <div class="webinars-section">
                     <h3>Educational Webinars and Training</h3>
                     
@@ -480,89 +511,76 @@
                 </div>
             </div>
         </div>
+        
     </section>
-
-    <!-- Contact Section -->
+    -->
+    <!-- --------------------------------------------------------Contact Section --------------------------------->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header">
-                <h2>Contact Us</h2>
-                <p>Let's Collaborate to Enhance Your Microbiology Services</p>
+          <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>At Arcane Dx Clinical Chemistry and Toxicology Consulting, we're here to provide
+              actionable insights and solutions for your clinical and laboratory needs. Let's work together to
+              achieve diagnostic excellence.</p>
+          </div>
+          
+          <div class="contact-content">
+            <div class="contact-info">
+              <div class="contact-item">
+                <!--
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h3>Our Location</h3>
+                  <p>123 Medical Center Drive, Suite 500<br>Boston, MA 02115</p>
+                </div>
+                -->
+              </div>
+              
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>info@arcanedx.com<br>support@arcanedx.com</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>+1 (617) 555-0123<br>+1 (800) 555-0124</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <!--
+                <i class="fas fa-clock"></i>
+                <div>
+                  <h3>Office Hours</h3>
+                  <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
+                </div>
+                -->
+              </div>
             </div>
             
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Our Location</h3>
-                            <p>123 Medical Center Drive, Suite 500<br>Boston, MA 02115</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email Us</h3>
-                            <p>info@precisionmicro.com<br>support@precisionmicro.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h3>Call Us</h3>
-                            <p>+1 (617) 555-0123<br>+1 (800) 555-0124</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h3>Office Hours</h3>
-                            <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form id="consultationForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
-                        </div>
-                        <div class="form-group">
-                            <select id="service" name="service">
-                                <option value="" disabled selected>Select Service</option>
-                                <option value="diagnostic">Diagnostic Interpretation</option>
-                                <option value="infection">Infection Control</option>
-                                <option value="antimicrobial">Antimicrobial Stewardship</option>
-                                <option value="laboratory">Laboratory Consultation</option>
-                                <option value="other">Other Inquiry</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Schedule a Consultation</button>
-                    </form>
-                </div>
+            <div class="google-form">
+              <h3>Schedule a Consultation</h3>
+              <p>Please fill out our consultation request form to get started. Our team of experts will review your information and get back to you promptly.</p>
+              <a href="YOUR_GOOGLE_FORM_URL_HERE" class="btn" target="_blank">
+                <i class="fas fa-calendar-check"></i>Complete Consultation Request
+              </a>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
     
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <span class="logo-text">Precision Microbiology</span>
-                    <p>Expert Guidance for Diagnostic Accuracy</p>
+                    <span class="logo-text">Arcane Dx</span>
+                    <p></p>
                 </div>
                 
                 <div class="footer-links">
@@ -571,7 +589,6 @@
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#clients">Clients</a></li>
-                        <li><a href="#resources">Resources</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -581,8 +598,8 @@
                     <ul>
                         <div class="footer-services">
                             <ul>
+                                <li><a href="../chemtox/Chemtox.html">Clinical Chemistry & Toxicology</a></li>
                                 <li><a href="../immunology/immunology.html">Clinical Immunology and Flow Cytometry Consulting</a></li>
-                                <li><a href="../microbiologyCons/microbiologyCons.html">Clinical Microbiology Consultation</a></li>
                                 <li><a href="../molecular_pathology/molecular_pathology.html">Molecular Pathology and Microbiology Consulting</a></li>
                                 <li><a href="../landingpage/Landingpage.html">Home page</a></li>
                             </ul>
@@ -602,7 +619,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 Precision Clinical Microbiology Consultation. All Rights Reserved.</p>
+                <p>&copy; 2025 Arcane Dx Microbiology Consultation. All Rights Reserved.</p>
             </div>
         </div>
     </footer>

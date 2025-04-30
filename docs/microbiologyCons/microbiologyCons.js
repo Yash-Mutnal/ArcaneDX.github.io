@@ -380,3 +380,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
     createBackToTopButton();*/
 });
+
+// Handle dropdown on mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+        
+        dropdownToggle.addEventListener('click', function(e) {
+            // Only prevent default on mobile
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            }
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        dropdowns.forEach(dropdown => {
+            if (!dropdown.contains(e.target) && dropdown.classList.contains('active')) {
+                dropdown.classList.remove('active');
+            }
+        });
+    });
+});
