@@ -15,16 +15,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 1000);
 
-    // Sticky Header
+    // Sticky Header - Ensure it starts transparent
     const header = document.querySelector('.header');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
+    
+    // Force remove sticky class on page load
+    header.classList.remove('sticky');
+    
+    // Add event listener for scroll
+    function handleScroll() {
+        if (window.scrollY > 50) { // Add sticky class after scrolling 50px
             header.classList.add('sticky');
         } else {
             header.classList.remove('sticky');
         }
-    });
-
+    }
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navList = document.querySelector('.nav-list');
@@ -277,6 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
 // Enhanced Section Fade-In Animation
 document.addEventListener('DOMContentLoaded', function() {
     // Create and append CSS for fade-in animations
@@ -294,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function() {
             transform: translateY(0);
         }
         
-        /* Staggered animations for items within sections */
+        
         .stagger-item {
             opacity: 0;
             transform: translateY(30px);
@@ -381,3 +386,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+

@@ -190,16 +190,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Show the corresponding panel
             document.getElementById(`${serviceType}-panel`).classList.add('active');
             
-            // Scroll to the top of the panel section with offset for header
-            const servicesContent = document.querySelector('.services-content');
-            const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
-            
-            if (servicesContent) {
-                window.scrollTo({
-                    top: servicesContent.offsetTop - headerHeight - 20,
-                    behavior: 'smooth'
-                });
-            }
+            // Remove the scrolling behavior that was causing the issue
+            // No need to scroll back to the top of the panel section
         });
     });
 });

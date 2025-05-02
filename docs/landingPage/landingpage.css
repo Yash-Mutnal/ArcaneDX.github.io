@@ -200,12 +200,106 @@ section {
     font-size: 28px;
     font-weight: 700;
     letter-spacing: 0.5px;
+    line-height: 1.1;
 }
+.dba-text {
+    color: var(--accent-color);
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: -2px;
+}
+
 
 .header.sticky .logo-image {
     height: 150px;
 }
 
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-list li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-list a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 10px 0;
+    display: block;
+}
+
+/* Dropdown specific styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown-icon {
+    font-size: 12px;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 250px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    padding: 10px 0;
+    list-style: none;
+}
+
+.dropdown-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu a {
+    padding: 10px 20px;
+    color: #333;
+    display: block;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(58, 134, 255, 0.1);
+    color: var(--primary-color);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
 /* Navigation Styles */
 .main-nav {
     flex: 1;
@@ -291,152 +385,7 @@ body {
     background-color: var(--dark-color);
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .header {
-        height: 180px;
-    }
-    
-    .header.sticky {
-        height: 130px;
-    }
-    
-    .logo-image {
-        height: 180px;
-    }
-    
-    .header.sticky .logo-image {
-        height: 130px;
-    }
-    
-    body {
-        padding-top: 180px;
-    }
-    
-    .hero {
-        margin-top: -180px;
-        padding-top: 180px;
-    }
-    
-    .nav-list a {
-        font-size: 13px;
-    }
-    
-    .nav-list li {
-        margin-left: 12px;
-    }
-}
 
-@media (max-width: 768px) {
-    .header {
-        height: 150px;
-    }
-    
-    .header.sticky {
-        height: 100px;
-    }
-    
-    .header-content {
-        flex-wrap: wrap;
-    }
-    
-    .logo-text-container {
-        flex: 0 0 30%;
-        order: 1;
-    }
-    
-    .logo-container {
-        flex: 0 0 40%;
-        order: 2;
-    }
-    
-    .main-nav {
-        flex: 0 0 30%;
-        order: 3;
-    }
-    
-    .logo-image {
-        height: 120px;
-    }
-    
-    .header.sticky .logo-image {
-        height: 80px;
-    }
-    
-    .nav-list {
-        display: none;
-        position: absolute;
-        top: 150px;
-        left: 0;
-        width: 100%;
-        background-color: var(--white);
-        padding: 20px 0;
-        box-shadow: var(--box-shadow);
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .header.sticky .nav-list {
-        top: 100px;
-    }
-    
-    .nav-list.active {
-        display: flex;
-    }
-    
-    .nav-list li {
-        margin: 10px 0;
-    }
-    
-    .nav-list a {
-        color: var(--dark-color);
-        font-size: 15px; /* Return to normal size for mobile menu */
-    }
-    
-    .menu-toggle {
-        display: block;
-    }
-    
-    body {
-        padding-top: 150px;
-    }
-    
-    .hero {
-        margin-top: -150px;
-        padding-top: 150px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        height: 120px;
-    }
-    
-    .header.sticky {
-        height: 80px;
-    }
-    
-    .logo-image {
-        height: 100px;
-    }
-    
-    .header.sticky .logo-image {
-        height: 60px;
-    }
-    
-    .logo-text {
-        font-size: 22px;
-    }
-    
-    body {
-        padding-top: 120px;
-    }
-    
-    .hero {
-        margin-top: -120px;
-        padding-top: 120px;
-    }
-}
 /* ***********************************************************************Hero Section */
 .hero {
     height: 100vh;
@@ -697,7 +646,11 @@ body {
     transform: translateY(0);
 }
 
-
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
 /*************************************88 Mission & Values Section */
 .mission-content {
@@ -1109,5 +1062,172 @@ body {
     
     .hero-content p {
         font-size: 16px;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .header {
+        height: 180px;
+    }
+    
+    .header.sticky {
+        height: 130px;
+    }
+
+    .dba-text {
+        font-size: 12px;
+    }
+    
+    .logo-image {
+        height: 180px;
+    }
+    
+    .header.sticky .logo-image {
+        height: 130px;
+    }
+    
+    body {
+        padding-top: 180px;
+    }
+    
+    .hero {
+        margin-top: -180px;
+        padding-top: 180px;
+    }
+    
+    .nav-list a {
+        font-size: 13px;
+    }
+    
+    .nav-list li {
+        margin-left: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 150px;
+    }
+    
+    .header.sticky {
+        height: 100px;
+    }
+
+    .logo-text {
+        font-size: 24px;
+    }
+    
+    .dba-text {
+        font-size: 11px;
+    }
+    
+    .header-content {
+        flex-wrap: wrap;
+    }
+    
+    .logo-text-container {
+        flex: 0 0 30%;
+        order: 1;
+    }
+    
+    .logo-container {
+        flex: 0 0 40%;
+        order: 2;
+    }
+    
+    .main-nav {
+        flex: 0 0 30%;
+        order: 3;
+    }
+    
+    .logo-image {
+        height: 120px;
+    }
+    
+    .header.sticky .logo-image {
+        height: 80px;
+    }
+    
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 150px;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        padding: 20px 0;
+        box-shadow: var(--box-shadow);
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .header.sticky .nav-list {
+        top: 100px;
+    }
+    
+    .nav-list.active {
+        display: flex;
+    }
+    
+    .nav-list li {
+        margin: 10px 0;
+    }
+    
+    .nav-list a {
+        color: var(--dark-color);
+        font-size: 15px; /* Return to normal size for mobile menu */
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    body {
+        padding-top: 150px;
+    }
+    
+    .hero {
+        margin-top: -150px;
+        padding-top: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 120px;
+    }
+    
+    .header.sticky {
+        height: 80px;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    .dba-text {
+        font-size: 10px;
+    }
+
+    .logo-image {
+        height: 100px;
+    }
+    
+    .header.sticky .logo-image {
+        height: 60px;
+    }
+    
+    .logo-text {
+        font-size: 22px;
+    }
+    
+    body {
+        padding-top: 120px;
+    }
+    
+    .hero {
+        margin-top: -120px;
+        padding-top: 120px;
     }
 }

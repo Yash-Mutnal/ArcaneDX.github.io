@@ -1,14 +1,15 @@
 :root {
-    --primary-color: #0052cc;
-    --secondary-color: #008060;
-    --white: #ffffff;
-    --dark-color: #333333;
-    --light-gray: #f5f8ff;
-    --medium-gray: #e0e0e0;
-    --dark-gray: #666666;
-    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-  }
+  --primary-color: #3a86ff;
+  --secondary-color: #4361ee;
+  --accent-color: #f5c542;
+  --dark-color: #2b2d42;
+  --light-color: #f8f9fa;
+  --gray-color: #6c757d;
+  --success-color: #06d6a0;
+  --white: #ffffff;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
   
   /* Hero Section - Chemistry Specific */
   .chem-hero {
@@ -112,10 +113,18 @@
 }
 
 .logo-text {
-    color: var(--primary-color);
+  color: var(--primary-color);
     font-size: 28px;
     font-weight: 700;
     letter-spacing: 0.5px;
+    line-height: 1.1;
+}
+
+.dba-text {
+  color: var(--accent-color);
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: -2px;
 }
 
 .header.sticky .logo-image {
@@ -271,11 +280,22 @@ body {
     background-color: var(--dark-color);
 }
 
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 /* Responsive adjustments */
 @media (max-width: 992px) {
     .header {
         height: 180px;
     }
+
+    .dba-text {
+      font-size: 12px;
+  }
     
     .header.sticky {
         height: 130px;
@@ -312,6 +332,13 @@ body {
         height: 150px;
     }
     
+    .logo-text {
+      font-size: 24px;
+  }
+  
+  .dba-text {
+      font-size: 11px;
+  }
     .header.sticky {
         height: 100px;
     }
@@ -423,6 +450,13 @@ body {
         height: 120px;
     }
     
+    .logo-text {
+      font-size: 20px;
+  }
+  
+  .dba-text {
+      font-size: 10px;
+  }
     .header.sticky {
         height: 80px;
     }
@@ -1069,7 +1103,7 @@ body {
   .section-header p {
     max-width: 700px;
     margin: 0 auto;
-    color: var(--white); /* Change text color to white */
+    color: var(--dark-color); /* Change text color to white */
     line-height: 1.7;
   }
   

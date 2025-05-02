@@ -322,6 +322,19 @@ section {
   .dropdown-menu a::after {
     display: none;
   }
+
+  .dba-text {
+    color: var(--accent-color);
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: -2px;
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
   
 
 /* Body adjustments for fixed header */
@@ -1136,7 +1149,11 @@ body {
     position: relative;
     padding-bottom: 15px;
   }
+
+
+
   
+  /* Override for contact section specifically */
   .section-header h2::after {
     content: '';
     position: absolute;
@@ -1151,7 +1168,7 @@ body {
   .section-header p {
     max-width: 700px;
     margin: 0 auto;
-    color: var(--white); /* Change text color to white */
+    color: var(--dark-color); /* Change text color to white */
     line-height: 1.7;
   }
   
@@ -1197,6 +1214,7 @@ body {
   .contact-item div {
     flex-grow: 1;
   }
+  
   
   .contact-item h3 {
     font-size: 18px;
