@@ -1,4 +1,30 @@
-/* Base Styles */
+/* ============================================
+   TABLE OF CONTENTS
+==============================================
+  1. CSS Variables & Base Styles
+  2. Typography & Common Elements
+  3. Layout & Container Styles
+  4. Button Styles
+  5. Header & Navigation
+  6. Mobile Navigation
+  7. Dropdown Styles
+  8. Hero Section
+  9. Services Section
+  10. About Section
+  11. Mission & Values Section
+  12. Contact Section
+  13. Footer Section
+  14. Animations & Effects
+  15. Media Queries
+     - Large Devices (991px and below)
+     - Medium Devices (768px and below)
+     - Small Devices (576px and below)
+     - Extra Small Devices (480px and below)
+============================================= */
+
+/* ============================================
+   1. CSS Variables & Base Styles
+============================================= */
 :root {
     --primary-color: #3a86ff;
     --secondary-color: #4361ee;
@@ -20,6 +46,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px; /* Base font size for better scaling */
 }
 
 body {
@@ -28,8 +55,13 @@ body {
     color: var(--dark-color);
     background-color: var(--light-color);
     overflow-x: hidden;
+    padding-top: 200px; /* Match header height */
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
 }
 
+/* ============================================
+   2. Typography & Common Elements
+============================================= */
 a {
     text-decoration: none;
     color: inherit;
@@ -42,8 +74,12 @@ ul {
 img {
     max-width: 100%;
     height: auto;
+    display: block; /* Prevents extra space below images */
 }
 
+/* ============================================
+   3. Layout & Container Styles
+============================================= */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -55,40 +91,6 @@ section {
     padding: 80px 0;
 }
 
-/* Button Styles */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 500;
-    text-align: center;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: 2px solid var(--primary-color);
-}
-
-.btn-primary:hover {
-    background-color: transparent;
-    color: var(--primary-color);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--white);
-    border: 2px solid var(--white);
-}
-
-.btn-secondary:hover {
-    background-color: var(--white);
-    color: var(--primary-color);
-}
-
-/* Section Header Styles */
 .section-header {
     text-align: center;
     margin-bottom: 60px;
@@ -117,40 +119,51 @@ section {
     font-size: 18px;
 }
 
-/* Preloader */
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--white);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* ============================================
+   4. Button Styles
+============================================= */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    -webkit-appearance: none; /* Fix for iOS */
 }
 
-.spinner {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 5px solid rgba(0, 0, 0, 0.1);
-    border-top-color: var(--accent-color);
-    animation: spin 1s linear infinite;
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
 }
 
-/* Header Styles */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+/* ============================================
+   5. Header & Navigation
+============================================= */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 200px; /* Increased to accommodate larger logo */
+    height: 200px;
     padding: 0;
     z-index: 1000;
     background-color: transparent;
@@ -160,7 +173,7 @@ section {
 .header.sticky {
     background-color: var(--white);
     box-shadow: var(--box-shadow);
-    height: 150px; /* Increased sticky height */
+    height: 150px;
 }
 
 .header .container {
@@ -202,6 +215,7 @@ section {
     letter-spacing: 0.5px;
     line-height: 1.1;
 }
+
 .dba-text {
     color: var(--accent-color);
     font-size: 16px;
@@ -209,34 +223,96 @@ section {
     margin-top: -2px;
 }
 
-
 .header.sticky .logo-image {
     height: 150px;
 }
 
+/* Main Navigation */
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .nav-list {
     display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
     align-items: center;
 }
 
 .nav-list li {
+    margin-left: 14px;
     position: relative;
-    margin: 0 15px;
 }
 
 .nav-list a {
-    color: var(--white);
-    text-decoration: none;
+    color: var(--accent-color);
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: var(--transition);
+    position: relative;
+    white-space: nowrap;
+    font-size: 16px;
     padding: 10px 0;
     display: block;
 }
 
-/* Dropdown specific styling */
+.nav-list a.two-words {
+    letter-spacing: -0.5px;
+}
+
+.header.sticky .nav-list a {
+    color: var(--dark-color);
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    bottom: -5px;
+    left: 0;
+    transition: var(--transition);
+}
+
+.nav-list a:hover::after,
+.nav-list a.active::after {
+    width: 100%;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+    color: var(--accent-color);
+}
+
+/* ============================================
+   6. Mobile Navigation
+============================================= */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+    background: transparent;
+    border: none;
+    padding: 10px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    margin: 5px 0;
+    transition: var(--transition);
+}
+
+.header.sticky .menu-toggle span {
+    background-color: var(--dark-color);
+}
+
+/* ============================================
+   7. Dropdown Styles
+============================================= */
 .dropdown {
     position: relative;
 }
@@ -253,7 +329,6 @@ section {
     transition: transform 0.3s ease;
 }
 
-/* Dropdown menu */
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -290,7 +365,6 @@ section {
     color: var(--primary-color);
 }
 
-/* Show dropdown on hover */
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
@@ -300,101 +374,20 @@ section {
 .dropdown:hover .dropdown-icon {
     transform: rotate(180deg);
 }
-/* Navigation Styles */
-.main-nav {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
 
-.nav-list {
-    display: flex;
-    align-items: center;
-}
-
-.nav-list li {
-    margin-left: 14px; /* Reduced space to fit all items */
-}
-
-.nav-list a {
-    color: var(--accent-color);
-    font-weight: 500;
-    transition: var(--transition);
-    position: relative;
-    white-space: nowrap; /* Keep text in one line */
-    font-size: 16px; /* Slightly smaller font to fit all items */
-}
-
-.nav-list a.two-words {
-    letter-spacing: -0.5px; /* Tighten letter spacing for multi-word items */
-}
-
-.header.sticky .nav-list a {
-    color: var(--dark-color);
-}
-
-.nav-list a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    bottom: -5px;
-    left: 0;
-    transition: var(--transition);
-}
-
-.nav-list a:hover::after,
-.nav-list a.active::after {
-    width: 100%;
-}
-
-.nav-list a:hover,
-.nav-list a.active {
-    color: var(--accent-color);
-}
-
-/* Body adjustments for fixed header */
-body {
-    padding-top: 200px; /* Match header height */
-}
-
-/* Hero Section adjustment */
-.hero {
-    margin-top: -200px; /* Match header height */
-    padding-top: 200px; /* Match header height */
-}
-
-/* Toggle Menu for Mobile */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--white);
-    margin: 5px 0;
-    transition: var(--transition);
-}
-
-.header.sticky .menu-toggle span {
-    background-color: var(--dark-color);
-}
-
-
-/* ***********************************************************************Hero Section */
+/* ============================================
+   8. Hero Section
+============================================= */
 .hero {
     height: 100vh;
-    background-image: url('Landingpage_background-logo.jpg'); /* You'll need this image */
+    background-image: url('Landingpage_background-logo.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
     display: flex;
     align-items: center;
+    margin-top: -200px;
+    padding-top: 200px;
 }
 
 .hero-overlay {
@@ -429,7 +422,9 @@ body {
     gap: 15px;
 }
 
-/* Services Section */
+/* ============================================
+   9. Services Section
+============================================= */
 .services {
     background-color: var(--white);
 }
@@ -520,7 +515,9 @@ body {
     transform: translateX(5px);
 }
 
-/* About Section */
+/* ============================================
+   10. About Section
+============================================= */
 .about {
     background-color: #f5f8ff;
 }
@@ -588,71 +585,15 @@ body {
     color: var(--gray-color);
 }
 
-.fade-section {
-    opacity: 0;
-    transform: translateY(30px);
-    visibility: hidden;
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out, visibility 0.8s ease-out;
-    will-change: opacity, transform, visibility;
-}
-
-.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-}
-
-/* Optional: Add a staggered delay to child elements in services and mission sections */
-.service-card, .mission-box, .values-box, .feature {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    transition-delay: 0s;
-}
-
-.fade-in .service-card:nth-child(1),
-.fade-in .mission-box:nth-child(1),
-.fade-in .feature:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.fade-in .service-card:nth-child(2),
-.fade-in .mission-box:nth-child(2),
-.fade-in .feature:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.fade-in .service-card:nth-child(3),
-.fade-in .mission-box:nth-child(3), 
-.fade-in .values-box,
-.fade-in .feature:nth-child(3) {
-    transition-delay: 0.3s;
-}
-
-.fade-in .service-card:nth-child(4),
-.fade-in .feature:nth-child(4) {
-    transition-delay: 0.4s;
-}
-
-.fade-in .feature:nth-child(5) {
-    transition-delay: 0.5s;
-}
-
-.fade-in .service-card,
-.fade-in .mission-box,
-.fade-in .values-box,
-.fade-in .feature {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .text-wrapper {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-/*************************************88 Mission & Values Section */
+/* ============================================
+   11. Mission & Values Section
+============================================= */
 .mission-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -661,15 +602,18 @@ body {
     margin: 0 auto;
 }
 
-.mission-box, .values-box {
+.mission-box, 
+.values-box {
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    transition: var(--transition);
 }
 
-.mission-box:hover, .values-box:hover {
+.mission-box:hover, 
+.values-box:hover {
     transform: translateY(-5px);
 }
 
@@ -698,13 +642,11 @@ body {
     width: 100%;
 }
 
-/* Keep the values list properly aligned */
 .values-list {
     text-align: left;
     align-self: flex-start;
 }
 
-/* For specifically targeting the headings if they have different classes */
 #mission h3,
 #vision h3,
 .mission-section h3,
@@ -713,7 +655,8 @@ body {
     width: 100%;
 }
 
-.mission-box h3, .values-box h3 {
+.mission-box h3, 
+.values-box h3 {
     font-size: 24px;
     margin-bottom: 15px;
     font-weight: 600;
@@ -771,7 +714,9 @@ body {
     color: var(--gray-color);
 }
 
-/* Contact Section */
+/* ============================================
+   12. Contact Section
+============================================= */
 .contact {
     padding: 80px 0;
     background-color: var(--primary-color);
@@ -800,7 +745,8 @@ body {
     align-items: center;
 }
 
-.contact-info, .google-form {
+.contact-info, 
+.google-form {
     background-color: var(--white);
     border-radius: 10px;
     padding: 40px;
@@ -890,7 +836,9 @@ body {
     margin-right: 8px;
 }
 
-/* Footer */
+/* ============================================
+   13. Footer Section
+============================================= */
 .footer {
     background-color: var(--dark-color);
     color: var(--light-color);
@@ -965,7 +913,100 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive */
+/* ============================================
+   14. Animations & Effects
+============================================= */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top-color: var(--accent-color);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.fade-section {
+    opacity: 0;
+    transform: translateY(30px);
+    visibility: hidden;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out, visibility 0.8s ease-out;
+    will-change: opacity, transform, visibility;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.service-card, 
+.mission-box, 
+.values-box, 
+.feature {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: 0s;
+}
+
+.fade-in .service-card:nth-child(1),
+.fade-in .mission-box:nth-child(1),
+.fade-in .feature:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.fade-in .service-card:nth-child(2),
+.fade-in .mission-box:nth-child(2),
+.fade-in .feature:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.fade-in .service-card:nth-child(3),
+.fade-in .mission-box:nth-child(3), 
+.fade-in .values-box,
+.fade-in .feature:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.fade-in .service-card:nth-child(4),
+.fade-in .feature:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.fade-in .feature:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.fade-in .service-card,
+.fade-in .mission-box,
+.fade-in .values-box,
+.fade-in .feature {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   15. Media Queries
+============================================= */
+
+/* Large Devices (991px and below) */
 @media (max-width: 991px) {
     .about-content,
     .contact-content {
@@ -975,98 +1016,7 @@ body {
     .about-image {
         order: -1;
     }
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-    .logo-image {
-        height: 70px;
-        margin-right: 10px;
-    }
-
-    .logo-text {
-        font-size: 24px;
-    }
     
-    .header.sticky .logo-image {
-        height: 60px;
-    }
-    
-    .nav-list {
-        position: fixed;
-        top: 0;
-        right: -300px;
-        width: 280px;
-        height: 100%;
-        background-color: var(--white);
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 80px 20px 30px;
-        transition: var(--transition);
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    .nav-list.active {
-        right: 0;
-    }
-    
-    .nav-list li {
-        margin: 15px 0;
-    }
-    
-    .nav-list a {
-        color: var(--dark-color);
-    }
-    
-    .hero-content h1 {
-        font-size: 36px;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-    }
-    
-    .hero-buttons .btn {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    
-    .section-header h2 {
-        font-size: 28px;
-    }
-    
-    .mission-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .mission-icon {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .mission-box h3, .values-box h3 {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 576px) {
-    section {
-        padding: 60px 0;
-    }
-    
-    .hero-content h1 {
-        font-size: 28px;
-    }
-    
-    .hero-content p {
-        font-size: 16px;
-    }
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
     .header {
         height: 180px;
     }
@@ -1105,7 +1055,16 @@ body {
     }
 }
 
+/* Medium Devices (768px and below) */
 @media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
     .header {
         height: 150px;
     }
@@ -1151,19 +1110,18 @@ body {
     
     .nav-list {
         display: none;
-        position: absolute;
-        top: 150px;
+        position: fixed;  /* Changed from absolute to fixed */
+        top: 0;  /* Start from top of viewport */
         left: 0;
         width: 100%;
+        height: 100vh;  /* Full viewport height */
         background-color: var(--white);
-        padding: 20px 0;
-        box-shadow: var(--box-shadow);
+        padding: 80px 20px 30px;  /* Add padding on top for close button */
         flex-direction: column;
         align-items: center;
-    }
-    
-    .header.sticky .nav-list {
-        top: 100px;
+        justify-content: center;
+        z-index: 999;
+        overflow-y: auto;  /* Allow scrolling if needed */
     }
     
     .nav-list.active {
@@ -1171,16 +1129,38 @@ body {
     }
     
     .nav-list li {
-        margin: 10px 0;
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
     }
     
     .nav-list a {
         color: var(--dark-color);
-        font-size: 15px; /* Return to normal size for mobile menu */
+        font-size: 18px;  /* Larger size for better touch targets */
+        padding: 12px 0;  /* More padding for touch targets */
     }
     
-    .menu-toggle {
-        display: block;
+    /* Mobile dropdown adjustments */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        background-color: rgba(0,0,0,0.05);
+        transition: max-height 0.3s ease;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+        max-height: 500px;
+    }
+    
+    .dropdown-toggle {
+        justify-content: center;
     }
     
     body {
@@ -1191,8 +1171,81 @@ body {
         margin-top: -150px;
         padding-top: 150px;
     }
+    
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .section-header h2 {
+        font-size: 28px;
+    }
+    
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mission-content {
+        grid-template-columns: 1fr;
+    }
 }
 
+/* Small Devices (576px and below) */
+@media (max-width: 576px) {
+    section {
+        padding: 50px 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+    }
+    
+    .section-header h2 {
+        font-size: 24px;
+    }
+    
+    .section-header p {
+        font-size: 16px;
+    }
+    
+    .service-card, 
+    .contact-info, 
+    .google-form {
+        padding: 25px;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+    }
+    
+    .contact-item i {
+        margin-bottom: 15px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* Extra Small Devices (480px and below) */
 @media (max-width: 480px) {
     .header {
         height: 120px;
@@ -1218,10 +1271,6 @@ body {
         height: 60px;
     }
     
-    .logo-text {
-        font-size: 22px;
-    }
-    
     body {
         padding-top: 120px;
     }
@@ -1230,4 +1279,57 @@ body {
         margin-top: -120px;
         padding-top: 120px;
     }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .service-icon i {
+        font-size: 24px;
+    }
+    
+    .mission-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .mission-icon i {
+        font-size: 20px;
+    }
+    
+    /* Improve touch targets */
+    .nav-list a,
+    .dropdown-menu a,
+    .footer-links a,
+    .footer-services a {
+        padding: 15px 0;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 15px 20px;
+    }
+}
+
+/* Mobile Navigation Active State */
+.menu-active .menu-toggle span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-active .menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-active .menu-toggle span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Add focus styles for accessibility */
+a:focus,
+button:focus,
+.btn:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }

@@ -68,23 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Services Tabs
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabPanes = document.querySelectorAll('.tab-pane');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const tabId = this.getAttribute('data-tab');
-            
-            // Remove active class from all buttons and panes
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabPanes.forEach(pane => pane.classList.remove('active'));
-            
-            // Add active class to current button and corresponding pane
-            this.classList.add('active');
-            document.getElementById(tabId).classList.add('active');
-        });
-    });
+    
 
     // Testimonials Slider
     const testimonials = document.querySelectorAll('.testimonial-item');
@@ -510,4 +494,114 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 100); // 100ms throttle for resize
         }
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Services Tabs with enhanced scrolling for all screen sizes
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    const tabsNav = document.querySelector('.tabs-nav');
+
+    if (tabButtons.length && tabPanes.length) {
+        // Initialize tabs
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and panes
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+                
+                // Add active class to current button and corresponding pane
+                this.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+                
+                // Scroll the clicked tab into view - works on all screen sizes
+                this.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            });
+        });
+        
+        // Add horizontal scroll with touch/mouse for all screen sizes
+        if (tabsNav) {
+            // Add visual indicator that tabs are scrollable
+            tabsNav.style.cursor = 'grab';
+            
+            // Mouse wheel scrolling for tabs (horizontal scrolling with mouse wheel)
+            tabsNav.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                tabsNav.scrollLeft += (e.deltaY + e.deltaX) * 0.4; // Adjust scroll speed here
+            }, { passive: false });
+            
+            // Mouse drag scrolling
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            
+            tabsNav.addEventListener('mousedown', (e) => {
+                isDown = true;
+                tabsNav.style.cursor = 'grabbing';
+                startX = e.pageX - tabsNav.offsetLeft;
+                scrollLeft = tabsNav.scrollLeft;
+                e.preventDefault(); // Prevent text selection during drag
+            });
+            
+            tabsNav.addEventListener('mouseleave', () => {
+                isDown = false;
+                tabsNav.style.cursor = 'grab';
+            });
+            
+            tabsNav.addEventListener('mouseup', () => {
+                isDown = false;
+                tabsNav.style.cursor = 'grab';
+            });
+            
+            tabsNav.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - tabsNav.offsetLeft;
+                const walk = (x - startX) * 2; // Scroll speed multiplier
+                tabsNav.scrollLeft = scrollLeft - walk;
+            });
+            
+            // Touch events for mobile devices
+            tabsNav.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].pageX - tabsNav.offsetLeft;
+                scrollLeft = tabsNav.scrollLeft;
+            }, { passive: true });
+            
+            tabsNav.addEventListener('touchmove', (e) => {
+                if (!startX) return;
+                const x = e.touches[0].pageX - tabsNav.offsetLeft;
+                const walk = (x - startX) * 2;
+                tabsNav.scrollLeft = scrollLeft - walk;
+                e.preventDefault();
+            }, { passive: false });
+            
+            tabsNav.addEventListener('touchend', () => {
+                startX = null;
+            }, { passive: true });
+            
+            // Add visual indication of scrollability
+            // First, check if tabs overflow and scrolling is needed
+            function checkOverflow() {
+                if (tabsNav.scrollWidth > tabsNav.clientWidth) {
+                    // Show subtle animation to indicate scrollability
+                    if (!tabsNav.classList.contains('scrolled-once')) {
+                        setTimeout(() => {
+                            const originalScroll = tabsNav.scrollLeft;
+                            tabsNav.scrollLeft = 40;
+                            setTimeout(() => {
+                                tabsNav.scrollLeft = originalScroll;
+                                tabsNav.classList.add('scrolled-once');
+                            }, 800);
+                        }, 1000);
+                    }
+                }
+            }
+            
+            // Run on load and resize
+            checkOverflow();
+            window.addEventListener('resize', checkOverflow);
+        }
+    }
 });

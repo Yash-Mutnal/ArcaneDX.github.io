@@ -697,11 +697,66 @@ body {
     justify-content: center;
     margin-bottom: 30px;
     overflow-x: auto;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    white-space: nowrap;
+    width: 100%;
+    scrollbar-width: thin;
+    position: relative;
+    cursor: grab;
 }
 
+.tabs-nav::-webkit-scrollbar {
+    height: 6px;
+}
+
+.tabs-nav::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.tabs-nav::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.tabs-nav::before,
+.tabs-nav::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tabs-nav::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0.8), rgba(255,255,255,0));
+}
+
+.tabs-nav::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0.8), rgba(255,255,255,0));
+}
+
+/* Show shadows only when content overflows */
+.tabs-nav.overflow-left::before {
+    opacity: 1;
+}
+
+.tabs-nav.overflow-right::after {
+    opacity: 1;
+}
+
+
+
 .tab-btn {
-    padding: 12px 25px;
+    flex: 0 0 auto;
+    padding: 12px 20px;
     background: transparent;
     border: none;
     border-bottom: 2px solid transparent;
@@ -710,14 +765,40 @@ body {
     color: var(--gray-color);
     cursor: pointer;
     transition: var(--transition);
-    margin: 0 5px;
+    margin: 0 15px;
     white-space: nowrap;
+    min-width: fit-content;
 }
+
+.tab-btn:first-child {
+    margin-left: 15px;
+}
+
+.tab-btn:last-child {
+    margin-right: 15px;
+}
+
 
 .tab-btn.active,
 .tab-btn:hover {
     color: var(--primary-color);
     border-color: var(--primary-color);
+}
+
+/* Improve tab button focus state for accessibility */
+.tab-btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Add a subtle animation for the active tab */
+.tab-btn.active {
+    position: relative;
+}
+
+
+.tabs-content {
+    width: 100%;
 }
 
 .tab-pane {
@@ -729,9 +810,25 @@ body {
     animation: fadeIn 0.5s ease;
 }
 
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    animation: pulseWidth 2s infinite;
+}
+
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseWidth {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
 }
 
 .tab-content-inner {
@@ -1320,11 +1417,33 @@ body {
     }
     
     .tab-btn {
-      min-width: 150px;
+        padding: 10px 15px;
+        font-size: 14px;
+        margin: 0 5px;
     }
     
     .tab-pane {
       padding: 30px 20px;
+    }
+
+    .services .section-header p {
+        font-size: 16px;
+    }
+    
+    /* Make tabs section full width */
+    .services-tabs {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Adjust tab content for mobile */
+    .tab-content-inner {
+        grid-template-columns: 1fr;
+    }
+    
+    .tab-image {
+        order: -1;
+        margin-bottom: 20px;
     }
     
     .client-grid {
@@ -1360,6 +1479,23 @@ body {
     
     .quote-icon {
       display: none;
+    }
+
+    .tab-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+        margin: 0 3px;
+    }
+    
+    /* Smaller header for services section */
+    .services .section-header h2 {
+        font-size: 22px;
+    }
+    
+    /* Make sure tabs don't get too small */
+    .tabs-nav {
+        justify-content: flex-start;
+        padding-left: 0;
     }
   }
 /* Footer */

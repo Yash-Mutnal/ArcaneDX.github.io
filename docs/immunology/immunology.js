@@ -18,33 +18,52 @@ document.addEventListener('DOMContentLoaded', function() {
     // Sticky Header - Ensure it starts transparent
     const header = document.querySelector('.header');
     
+    // Force set initial state
+    header.style.backgroundColor = 'transparent';
+    
     // Force remove sticky class on page load
     header.classList.remove('sticky');
     
     // Add event listener for scroll
+    window.addEventListener('scroll', handleScroll);
+    
+    // Call once on page load to set initial state
+    handleScroll();
+    
     function handleScroll() {
-        if (window.scrollY > 50) { // Add sticky class after scrolling 50px
+        if (window.scrollY > 50) {
             header.classList.add('sticky');
+            header.style.backgroundColor = ''; // Let CSS handle it when sticky
         } else {
             header.classList.remove('sticky');
+            header.style.backgroundColor = 'transparent'; // Ensure transparency when not sticky
         }
     }
+    
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navList = document.querySelector('.nav-list');
     
     if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function(e) {
+            // Stop event from propagating
+            e.stopPropagation();
+            
+            // Toggle classes
             navList.classList.toggle('active');
-            menuToggle.classList.toggle('active');
+            document.body.classList.toggle('menu-active');
+            
+            // Toggle visual state of menu icon
+            this.classList.toggle('active');
         });
     }
-
+    
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.main-nav') && navList.classList.contains('active')) {
             navList.classList.remove('active');
             menuToggle.classList.remove('active');
+            document.body.classList.remove('menu-active');
         }
     });
 
@@ -107,183 +126,60 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Contact Form Validation and Animation
-    const contactForm = document.getElementById('immunologyContactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic validation
-            let isValid = true;
-            const requiredFields = contactForm.querySelectorAll('[required]');
-            
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.classList.add('error');
-                    
-                    // Add shake animation
-                    field.classList.add('shake');
-                    setTimeout(() => {
-                        field.classList.remove('shake');
-                    }, 500);
-                } else {
-                    field.classList.remove('error');
-                }
-            });
-            
-            if (isValid) {
-                // Show success message (in a real app, you'd submit the form)
-                const formContainer = contactForm.parentElement;
-                
-                // Create success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.innerHTML = `
-                    <div class="success-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>Thank You!</h3>
-                    <p>Your message has been sent successfully. We'll get back to you soon.</p>
-                `;
-                
-                // Add CSS for the success message
-                const style = document.createElement('style');
-                style.textContent = `
-                    .success-message {
-                        text-align: center;
-                        padding: 40px 20px;
-                        animation: fadeIn 0.5s ease forwards;
-                    }
-                    .success-icon {
-                        width: 80px;
-                        height: 80px;
-                        background-color: rgba(6, 214, 160, 0.1);
-                        border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        margin: 0 auto 20px;
-                    }
-                    .success-icon i {
-                        font-size: 40px;
-                        color: var(--success-color);
-                    }
-                    .success-message h3 {
-                        font-size: 24px;
-                        margin-bottom: 10px;
-                        color: var(--success-color);
-                    }
-                    .shake {
-                        animation: shake 0.5s ease-in-out;
-                    }
-                    @keyframes shake {
-                        0%, 100% { transform: translateX(0); }
-                        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-                        20%, 40%, 60%, 80% { transform: translateX(5px); }
-                    }
-                    .error {
-                        border-color: #ff3860 !important;
-                    }
-                `;
-                document.head.appendChild(style);
-                
-                // Hide form and show success message
-                contactForm.style.display = 'none';
-                formContainer.appendChild(successMessage);
-            }
-        });
-        
-        // Remove error class on input
-        contactForm.querySelectorAll('input, textarea, select').forEach(field => {
-            field.addEventListener('input', function() {
-                if (field.value.trim()) {
-                    field.classList.remove('error');
-                }
-            });
-        });
-    }
-
-    // Image hover effects
-    const teamImage = document.getElementById('team-image');
-    if (teamImage) {
-        // Array of potential placeholder images for swapping
-        const teamImages = [
-        '2nd-pic.jpg',  // keep your original image as the first option
-        ];
-        
-        let currentImageIndex = 0;
-        
-        // Change image on hover
-        teamImage.addEventListener('mouseenter', function() {
-            currentImageIndex = (currentImageIndex + 1) % teamImages.length;
-            teamImage.src = teamImages[currentImageIndex];
-        });
-    }
-
-    // Add animation when elements come into view
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.service-card, .client-card, .reason-card, .article-card, .webinar-card, .material-card, .contact-card');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-            
-            if (elementPosition < screenPosition) {
-                element.classList.add('animate');
-            }
-        });
-    };
-
-    // Add the animation CSS
-    const animationStyle = document.createElement('style');
-    animationStyle.textContent = `
-        .service-card, .client-card, .reason-card, .article-card, .webinar-card, .material-card, .contact-card {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        
-        .animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    `;
-    document.head.appendChild(animationStyle);
-    
-    // Run on load and scroll
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Run once on load
-});
-
-document.addEventListener('DOMContentLoaded', function() {
+    // Dropdown handling for mobile
     const dropdowns = document.querySelectorAll('.dropdown');
     
     dropdowns.forEach(dropdown => {
         const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
         
-        dropdownToggle.addEventListener('click', function(e) {
-            // Only prevent default on mobile
-            if (window.innerWidth <= 768) {
+        // Add click event for mobile
+        if (window.innerWidth <= 768) {
+            dropdownToggle.addEventListener('click', function(e) {
                 e.preventDefault();
+                e.stopPropagation(); // Prevent closing menu
                 dropdown.classList.toggle('active');
-            }
-        });
+                
+                // Expand dropdown menu
+                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                if (dropdown.classList.contains('active')) {
+                    dropdownMenu.style.maxHeight = dropdownMenu.scrollHeight + 'px';
+                    dropdownMenu.style.opacity = '1';
+                    dropdownMenu.style.visibility = 'visible';
+                } else {
+                    dropdownMenu.style.maxHeight = '0';
+                }
+            });
+        }
     });
-    
+
     // Close dropdowns when clicking outside
     document.addEventListener('click', function(e) {
         dropdowns.forEach(dropdown => {
             if (!dropdown.contains(e.target) && dropdown.classList.contains('active')) {
                 dropdown.classList.remove('active');
+                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                dropdownMenu.style.maxHeight = '0';
             }
         });
     });
-});
 
+    // Update dropdown behavior on window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            dropdowns.forEach(dropdown => {
+                // Remove active class for desktop view
+                dropdown.classList.remove('active');
+                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                if (dropdownMenu) {
+                    dropdownMenu.style.maxHeight = '';
+                    dropdownMenu.style.opacity = '';
+                    dropdownMenu.style.visibility = '';
+                }
+            });
+        }
+    });
 
-// Enhanced Section Fade-In Animation
-document.addEventListener('DOMContentLoaded', function() {
+    // Enhanced Section Fade-In Animation
     // Create and append CSS for fade-in animations
     const styleEl = document.createElement('style');
     styleEl.textContent = `
@@ -299,7 +195,6 @@ document.addEventListener('DOMContentLoaded', function() {
             transform: translateY(0);
         }
         
-        
         .stagger-item {
             opacity: 0;
             transform: translateY(30px);
@@ -312,10 +207,32 @@ document.addEventListener('DOMContentLoaded', function() {
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* Add mobile menu animation */
+        .menu-toggle {
+            position: relative;
+            z-index: 1002;
+        }
+        
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        
+        .nav-list.active {
+            display: flex !important;
+        }
     `;
     document.head.appendChild(styleEl);
     
-    // Select all major sections to animate - include all sections on the page
+    // Select all major sections to animate
     const sections = document.querySelectorAll('section');
     
     // Add fade-in-section class to all sections
@@ -325,17 +242,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add stagger classes to items within sections
     const staggerElements = {
-        // Hero section elements
         '.hero-content > *': document.querySelectorAll('.hero-content > *'),
-        // About section
         '.about-content > *': document.querySelectorAll('.about-content > *'),
-        // Core values section
         '.value-item': document.querySelectorAll('.value-item'),
-        // Services tabs
         '.tab-btn': document.querySelectorAll('.tab-btn'),
-        // Clients section
         '.client-card': document.querySelectorAll('.client-card'),
-        // Why us section
         '.reason-card': document.querySelectorAll('.reason-card')
     };
     
@@ -349,7 +260,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check if elements are in viewport and add visible class
     function checkFadeInElements() {
-        // Set this to control when the animation triggers (0.85 means 85% of viewport height)
         const triggerBottom = window.innerHeight * 0.85;
         
         sections.forEach(section => {
@@ -386,5 +296,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-

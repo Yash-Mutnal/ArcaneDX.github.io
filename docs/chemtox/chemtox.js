@@ -273,6 +273,8 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
+
+  
   
   // Call floating effect
   addFloatingEffect();
